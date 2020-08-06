@@ -1,9 +1,9 @@
  > Remove prompt text (lines beginning with "\>") and replace with your project specifics (including this prompt)
  > Replace anything between \<...\> with your project specifics and remove angle brackets. 
-# \<Project title\>
+# WordSmith
  > Your author list below should include links to all members GitHub and should begin with a "\>"
  
- > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
+ > Authors: [Albert Tambalo](https://github.com/alberttambalo), [Kimberly Yang](https://github.com/kimberlytyang), [Christopher Young](https://github.com/ChrisYoung1048)
  
  > You will be forming a group of **TWO - THREE** students and work on an interesting project that you will propose yourself (in this `README.md` document). You can pick any project that you'd like, but it needs ot implement three design patterns. Each of the members in a group is expected to work on at least one design pattern and its test cases. You can, of course, help each other, but it needs to be clear who will be responsible for which pattern and for which general project features.
  
