@@ -17,12 +17,16 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include
- > * Why is it important or interesting to you?
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
- > * What will be the input/output of your project?
- > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+
+ > * Typing proficiency is essential in today's academic and professional environment. One must develop this practical skill in order to improve performance in the workplace and save time when typing.
+ > * Languages / Tools / Libraries / Technologies:
+ >   * [C++11](https://en.cppreference.com/w/cpp/11) - Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to computer peripherals.
+ >   * [SDL](https://www.libsdl.org/) - Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to computer peripherals.
+ > * Through the implementation of customizable typing exercises delivered through a user-friendly graphical interface, users can improve keyboard proficiency at their own pace. 
+ > * For now, this project will apply the Composite, Iterator, and Flyweight design patterns. 
+ >   * The Composite design will be reflected by a hierarchy of graphic objects
+ >   * The Iterator design will be applied when accessing lists of objects. *eg: List of words*
+ >   * The Flyweight will reduce the cost of printing many characters onto the client window. 
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
