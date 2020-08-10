@@ -23,10 +23,10 @@
  >   * [C++11](https://en.cppreference.com/w/cpp/11) - C++11 is the second major version of C++.
  >   * [SDL](https://www.libsdl.org/) - Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to computer peripherals.
  > * Through the implementation of customizable typing exercises delivered through a user-friendly graphical interface, users can improve keyboard proficiency at their own pace. 
- > * For now, this project will apply the Composite, Iterator, and Flyweight design patterns. 
- >   * The Composite design will be reflected by a hierarchy of graphic objects
- >   * The Iterator design will be applied when accessing lists of objects. *eg: List of words*
- >   * The Flyweight will reduce the cost of printing many characters onto the client window. 
+ > * The composite design pattern will be applied through the implementation of a base graphic/glyph class. This class then be inherited to create primitive classes such as line.hpp, rectangle.hpp, and character.hpp. A composite class such as sentence.hpp can be an aggregate of character classes. A GUI class can be composed of rectangle classes that represent the buttons and windows.
+ > * The iterator design pattern will be applied when traversing containers of Graphic elements. For instance, Graphic elements would probably be organized into containers, whose elements can be accessed through the iterator.
+ > * The flyweight design will be applied through the creation of character classes which will be reused whenever the same character is created. A HashMap will store references to every character created (A reference to every character on the keyboard). Whenever a Character object is created, the reference to that Character can be taken from the HashMap. In this case, the intrinsic state of a Character would be the letter it represents, as it would not change given any situation. Extrinsic states would be the position / color / highlight of the character created.
+ > * Ideally, the flyweight design would allow us to efficiently create Character classes by reference. These elements can be stored into a composite Sentence class that would contain these Character classes can be traversed through an Iterator class.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
