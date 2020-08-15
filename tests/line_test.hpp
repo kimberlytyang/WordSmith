@@ -69,4 +69,14 @@ TEST(LineTest, SettersTestNegative) {
 	EXPECT_EQ(get<2>(test->getColor()), 35);
 }
 
+TEST(LineTest, GetChildTest) {
+	Line* test1 = new Line();
+	Line* test2 = new Line(1, 2, 3, 4);
+	Line* test3 = new Line(12, 15, 17, 15, 100, 100, 100);
+
+	EXPECT_EQ(test1->getChild(0), test1);
+	EXPECT_EQ(test2->getChild(0), test2);
+	EXPECT_EQ(test3->getChild(0), test3);
+}
+
 #endif // LINE_TEST_HPP
