@@ -1,8 +1,7 @@
 #include "gtest/gtest.h"
-#include "../tests/line_test.hpp"
-#include "../tests/rectangle_test.hpp"
-
-#include "../tests/character_test.hpp"
+#include "line_test.hpp"
+#include "rectangle_test.hpp"
+#include "character_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
