@@ -1,5 +1,4 @@
- > Remove prompt text (lines beginning with "\>") and replace with your project specifics (including this prompt)
- > Replace anything between \<...\> with your project specifics and remove angle brackets. 
+![CI](https://github.com/cs100/final-project-2ndstorystudio/workflows/CI/badge.svg)
 # WordSmith
  > Your author list below should include links to all members GitHub and should begin with a "\>"
  
@@ -27,6 +26,7 @@
  > * The iterator design pattern will be applied when traversing containers of Graphic elements. For instance, Graphic elements would probably be organized into containers, whose elements can be accessed through the iterator.
  > * The flyweight design will be applied through the creation of character classes which will be reused whenever the same character is created. A HashMap will store references to every character created (A reference to every character on the keyboard). Whenever a Character object is created, the reference to that Character can be taken from the HashMap. In this case, the intrinsic state of a Character would be the letter it represents, as it would not change given any situation. Extrinsic states would be the position / color / highlight of the character created.
  > * Ideally, the flyweight design would allow us to efficiently create Character classes by reference. These elements can be stored into a composite Sentence class that would contain these Character classes can be traversed through an Iterator class.
+ > * [Project Specifications](https://docs.google.com/document/d/1ejA8TL6ZKhy_L3s7JrmXWeAPj9ibm9LW2zqrtt7pb3Q/edit?usp=sharing)
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
