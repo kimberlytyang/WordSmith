@@ -1,5 +1,4 @@
- > Remove prompt text (lines beginning with "\>") and replace with your project specifics (including this prompt)
- > Replace anything between \<...\> with your project specifics and remove angle brackets. 
+![CI](https://github.com/cs100/final-project-2ndstorystudio/workflows/CI/badge.svg)
 # WordSmith
  > Your author list below should include links to all members GitHub and should begin with a "\>"
  
