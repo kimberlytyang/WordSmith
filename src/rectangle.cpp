@@ -1,5 +1,4 @@
 #include "../header/rectangle.hpp"
-#include "../header/graphic.hpp"
 
 #include <utility>
 #include <tuple>
