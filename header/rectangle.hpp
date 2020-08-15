@@ -15,7 +15,7 @@ class Rectangle : public Graphic {
 		Rectangle(int, int, int, int);
 		Rectangle(int, int, int, int, int, int, int);
 		void draw(){};
-		Rectangle* getChild(int);
+		Graphic* getChild(int);
 		std::pair<int,int> getTL();
 		std::pair<int,int> getBR();
 		std::tuple<int,int,int> getColor();

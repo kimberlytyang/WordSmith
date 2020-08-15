@@ -30,7 +30,7 @@ Character::Character(char c, int x, int y, int r, int g, int b) {
 
 void Character::draw() {}
 
-Character* Character::getChild(int i) { return this; }
+Graphic* Character::getChild(int i) { return this; }
 
 char Character::getC() { return c; }
 

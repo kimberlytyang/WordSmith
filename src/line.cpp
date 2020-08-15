@@ -24,7 +24,7 @@ void Line::draw() {
 
 }
 
-Line* Line::getChild(int i) {
+Graphic* Line::getChild(int i) {
 	return this;
 }
 

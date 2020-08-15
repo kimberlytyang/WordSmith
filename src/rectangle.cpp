@@ -23,7 +23,7 @@ Rectangle::Rectangle(int tlx, int tly, int brx, int bry, int r, int g, int b){
 
 }
 
-Rectangle* Rectangle::getChild(int i){
+Graphic* Rectangle::getChild(int i){
 	return this;
 }
 
