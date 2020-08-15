@@ -19,7 +19,7 @@ class Character : public Graphic {
 
 		void draw();
 
-		Character* getChild(int i); 
+		Graphic* getChild(int i); 
 		char getC();
 		int getSize();
 		std::pair<int, int> getLocation();
