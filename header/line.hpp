@@ -17,7 +17,7 @@ class Line : public Graphic {
 		Line(int xS, int yS, int xE, int yE);
 		Line(int xS, int yS, int xE, int yE, int r, int g, int b);
 		void draw();
-		Graphic* getChild(int i);
+		Line* getChild(int i);
 		pair<int, int> getStart();
 		pair<int, int> getEnd();
 		tuple<int, int, int> getColor();
