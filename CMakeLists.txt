@@ -5,7 +5,7 @@ ADD_SUBDIRECTORY(googletest)
 SET(CMAKE-CXX-STANDARD 11)
 
 ADD_EXECUTABLE(test
-	src/unit_test.cpp
+	tests/unit_test.cpp
 	src/line.cpp
 	src/rectangle.cpp
 	src/character.cpp
