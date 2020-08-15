@@ -5,6 +5,7 @@
 
 TEST(LineTest, DefaultConstructorGettersTest) {
 	Line* test = new Line();
+
 	EXPECT_EQ(test->getStart().first, 0);
 	EXPECT_EQ(test->getStart().second, 0);
 	EXPECT_EQ(test->getEnd().first, 0);
@@ -16,6 +17,7 @@ TEST(LineTest, DefaultConstructorGettersTest) {
 
 TEST(LineTest, CoordinateConstructorGettersTest) {
         Line* test = new Line(4, 15, 17, 15);
+
         EXPECT_EQ(test->getStart().first, 4);
         EXPECT_EQ(test->getStart().second, 15);
         EXPECT_EQ(test->getEnd().first, 17);
@@ -27,6 +29,7 @@ TEST(LineTest, CoordinateConstructorGettersTest) {
 
 TEST(LineTest, FullConstructorGettersTest) {
         Line* test = new Line(4, 15, 17, 15, 100, 215, 75);
+
         EXPECT_EQ(test->getStart().first, 4);
         EXPECT_EQ(test->getStart().second, 15);
         EXPECT_EQ(test->getEnd().first, 17);
@@ -34,6 +37,36 @@ TEST(LineTest, FullConstructorGettersTest) {
         EXPECT_EQ(get<0>(test->getColor()), 100);
         EXPECT_EQ(get<1>(test->getColor()), 215);
         EXPECT_EQ(get<2>(test->getColor()), 75);
+}
+
+TEST(LineTest, SettersTestPositive) {
+	Line* test = new Line();
+	test->setStart(12, 7);
+	test->setEnd(15, 21);
+	test->setColor(250, 120, 35);
+
+	EXPECT_EQ(test->getStart().first, 12);
+	EXPECT_EQ(test->getStart().second, 7);
+	EXPECT_EQ(test->getEnd().first, 15);
+	EXPECT_EQ(test->getEnd().second, 21);
+	EXPECT_EQ(get<0>(test->getColor()), 250);
+	EXPECT_EQ(get<1>(test->getColor()), 120);
+	EXPECT_EQ(get<2>(test->getColor()), 35);
+}
+
+TEST(LineTest, SettersTestNegative) {
+	Line* test = new Line();
+	test->setStart(-12, -7);
+	test->setEnd(-15, -21);
+	test->setColor(250, 120, 35);
+
+	EXPECT_EQ(test->getStart().first, -12);
+	EXPECT_EQ(test->getStart().second, -7);
+	EXPECT_EQ(test->getEnd().first, -15);
+	EXPECT_EQ(test->getEnd().second, -21);
+	EXPECT_EQ(get<0>(test->getColor()), 250);
+	EXPECT_EQ(get<1>(test->getColor()), 120);
+	EXPECT_EQ(get<2>(test->getColor()), 35);
 }
 
 #endif // LINE_TEST_HPP
