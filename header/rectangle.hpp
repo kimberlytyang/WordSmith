@@ -9,16 +9,16 @@ class Rectangle : Graphic {
 	private:
 		std::pair <int,int> tl;
 		std::pair <int,int> br;
-		std::tuple <int,int,int> rgb;
+		std::tuple <int,int,int> color;
 	public:
 		Rectangle();
 		Rectangle(int, int, int, int);
 		Rectangle(int, int, int, int, int, int, int);
 		void draw(){};
-		Graphic* getChild(int);
+		Rectangle* getChild(int);
 		std::pair<int,int> getTL();
 		std::pair<int,int> getBR();
-		std::tuple<int,int,int> getRGB();
+		std::tuple<int,int,int> getColor();
 		void setTL(int,int);
 		void setBR(int,int);
 		void setColor(int, int, int);
