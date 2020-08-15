@@ -16,8 +16,11 @@ class Rectangle : Graphic {
 		Rectangle(int, int, int, int, int, int, int);
 		void draw(){};
 		Graphic* getChild(int);
-		pair<int,int> getTL();
-		pair<int,int> getBR();
-		tuple getRGB();
+		std::pair<int,int> getTL();
+		std::pair<int,int> getBR();
+		std::tuple<int,int,int> getRGB();
+		void setTL(int,int);
+		void setBR(int,int);
+		void setColor(int, int, int);
 };
 #endif
