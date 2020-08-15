@@ -27,6 +27,7 @@
  >   * The Composite design will be reflected by a hierarchy of graphic objects
  >   * The Iterator design will be applied when accessing lists of objects. *eg: List of words*
  >   * The Flyweight will reduce the cost of printing many characters onto the client window. 
+ > * Link to project specs(https://docs.google.com/document/d/1ejA8TL6ZKhy_L3s7JrmXWeAPj9ibm9LW2zqrtt7pb3Q/edit?usp=sharing)
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
