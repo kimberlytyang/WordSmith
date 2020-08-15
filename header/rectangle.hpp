@@ -5,7 +5,7 @@
 #include <utility>
 #include <tuple>
 
-class Rectangle : Graphic {
+class Rectangle : public Graphic {
 	private:
 		std::pair <int,int> tl;
 		std::pair <int,int> br;
