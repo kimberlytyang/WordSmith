@@ -3,11 +3,12 @@
 
 #include "graphic.hpp"
 #include <utility>
+#include <tuple>
 
 class Rectangle : Graphic {
 	private:
-		std::pair <int,int> bl;
-		std::pair <int,int> tr;
+		std::pair <int,int> tl;
+		std::pair <int,int> br;
 		std::tuple <int,int,int> rgb;
 	public:
 		Rectangle();
