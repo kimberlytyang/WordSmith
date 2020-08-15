@@ -1,4 +1,6 @@
 #include "gtest/gtest.h"
+#include "../tests/line_test.hpp"
+#include "../tests/rectangle_test.hpp"
 
 #include "../tests/character_test.hpp"
 
