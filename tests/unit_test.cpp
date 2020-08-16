@@ -3,6 +3,8 @@
 #include "rectangle_test.hpp"
 #include "character_test.hpp"
 #include "char_iterator_test.hpp"
+#include "flyweight_test.hpp"
+#include "window_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
