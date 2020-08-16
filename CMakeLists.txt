@@ -9,6 +9,7 @@ ADD_EXECUTABLE(test
 	src/line.cpp
 	src/rectangle.cpp
 	src/character.cpp
+	src/char_iterator.cpp
 	src/flyweight.cpp
 	src/window.cpp
 )
