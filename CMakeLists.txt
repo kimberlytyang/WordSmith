@@ -9,6 +9,7 @@ ADD_EXECUTABLE(test
 	src/line.cpp
 	src/rectangle.cpp
 	src/character.cpp
+	src/char_iterator.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
