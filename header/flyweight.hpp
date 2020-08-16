@@ -15,7 +15,4 @@ class Flyweight{
 		Character* hash(char c);
 };
 
-
-
-
 #endif
