@@ -10,6 +10,7 @@ ADD_EXECUTABLE(test
 	src/rectangle.cpp
 	src/character.cpp
 	src/flyweight.cpp
+	src/window.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
