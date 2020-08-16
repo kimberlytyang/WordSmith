@@ -18,8 +18,10 @@ void Window::insert(Graphic* g) {
 
 void Window::remove(Graphic* g) {
 	for (auto it = graphics.begin(); it != graphics.end(); ++it) {
-		if(*it == g)
+		if(*it == g) {
 			graphics.erase(it);
+			return;
+		}
 	}	
 }
 
