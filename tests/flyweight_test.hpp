@@ -41,7 +41,6 @@ TEST(FlyweightTest, HashingMany){
 	EXPECT_EQ(res[19], 'i');
 	EXPECT_EQ(res[20], 't');
 	EXPECT_EQ(res[21], 'h');
-
 }
 
 TEST(FlyweightTest, DuplicateHashTest){
@@ -53,7 +52,6 @@ TEST(FlyweightTest, DuplicateHashTest){
 
 	EXPECT_EQ(test1, test3);
 	EXPECT_NE(test1, test2);
-	
 }
 
 #endif
