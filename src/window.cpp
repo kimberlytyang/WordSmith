@@ -27,6 +27,8 @@ Graphic* Window::getChild(int i) {
 	return graphics.at(i);
 }
 
+std::vector<Graphic*> Window::getGraphics() { return graphics; }
+
 std::pair<int, int> Window::getTL() { return tl; }
 
 std::pair<int, int> Window::getBR() { return br; }

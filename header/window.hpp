@@ -17,6 +17,7 @@ class Window : public Graphic {
 		void insert(Graphic* g);
 		void remove(Graphic* g);
 		Graphic* getChild(int i);
+		std::vector<Graphic*> getGraphics();
 		std::pair<int, int> getTL();
 		std::pair<int, int> getBR();
 		void setTL(int x, int y);
