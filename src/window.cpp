@@ -16,8 +16,8 @@ void Window::insert(Graphic* g) {
 	graphics.push_back(g);
 }
 
-void Window::remove(Graphic* g( {
-	for (auto it = graphics.begin(); i != graphics.end(); ++it) {
+void Window::remove(Graphic* g) {
+	for (auto it = graphics.begin(); it != graphics.end(); ++it) {
 		if(*it == g)
 			graphics.erase(it);
 	}	
@@ -31,6 +31,6 @@ std::pair<int, int> Window::getTL() { return tl; }
 
 std::pair<int, int> Window::getBR() { return br; }
 
-void Window::setTL() { tl = std::make_pair(x, y); }
+void Window::setTL(int x, int y) { tl = std::make_pair(x, y); }
 
-void Window::setBR() { br = std::make_pair(x, y); }
+void Window::setBR(int x, int y) { br = std::make_pair(x, y); }
