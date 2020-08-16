@@ -8,7 +8,7 @@
 vector<char> CharIterator::loadPrompt(int num) {
 	vector<char> prompt;
 
-	ifstream inCount("../res/prompt.txt");
+	ifstream inCount("res/prompt.txt");
 	if (!inCount.is_open()) {
                 cout << "Error opening prompt file to count lines." << endl;
                 prompt.push_back('!');

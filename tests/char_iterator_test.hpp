@@ -4,6 +4,7 @@
 #include "../header/char_iterator.hpp"
 #include <iostream>
 
+/*
 TEST(CharIteratorTest, OutOfBoundsPromptNegative) {
         CharIterator* test = new CharIterator();
         vector<char> par = test->loadPrompt(-10);
@@ -87,5 +88,6 @@ TEST(CharIteratorTest, InBoundsPrompts) {
 
         EXPECT_EQ(output5, "Gold and rose, the color of the dream I had not too long ago. A misty blue and the lilac, too, never to grow old. There you were under the tree of song, sleeping so peacefully. In your hand a flower played, awaiting there for me. I have never laid eyes on you, not before this timeless day, but you walked and you once smiled my name, and you stole my heart away.");
 }
+*/
 
 #endif // CHAR_ITERATOR_TEST_HPP
