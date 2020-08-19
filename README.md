@@ -29,16 +29,8 @@
  > * [Project Specifications](https://docs.google.com/document/d/1ejA8TL6ZKhy_L3s7JrmXWeAPj9ibm9LW2zqrtt7pb3Q/edit?usp=sharing)
 
  > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to 
-    <p align="center">
-        <img src="res/composite.png">
-    </p>
-    <p align="center">
-        <img src="res/iterator.png">
-    </p>
-    <p align="center">
-        <img src="res/flyweight.png">
-    </p>
+ > Class Diagram
+ ![composite pattern diagram](res/composite.png)
  > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
  >   * TODO, In progress, In testing, Done
  >   * You can change these or add more if you'd like, but we should be able to identify at least these.
