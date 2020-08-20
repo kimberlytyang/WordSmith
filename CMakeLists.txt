@@ -12,6 +12,7 @@ ADD_EXECUTABLE(test
 	src/flyweight.cpp
 	src/window.cpp
 	src/promptselector.cpp
+	src/parse_novice.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
