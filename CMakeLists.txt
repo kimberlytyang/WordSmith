@@ -11,6 +11,7 @@ ADD_EXECUTABLE(test
 	src/character.cpp
 	src/flyweight.cpp
 	src/window.cpp
+	src/promptselector.cpp
 	src/parse_novice.cpp
 )
 
