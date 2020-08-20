@@ -14,5 +14,15 @@ ADD_EXECUTABLE(test
 	src/window.cpp
 )
 
+ADD_EXECUTABLE(sim
+	src/sim.cpp
+        src/line.cpp
+        src/rectangle.cpp
+        src/character.cpp
+        src/char_iterator.cpp
+        src/flyweight.cpp
+        src/window.cpp
+)
+
 TARGET_LINK_LIBRARIES(test gtest)
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
