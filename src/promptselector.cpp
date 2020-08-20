@@ -8,7 +8,7 @@ PromptSelector::PromptSelector(Parse* difficulty) {
         this->difficulty = difficulty;
 }
 
-std::vector<char> PromptSelector::findDifficulty(int i) {
+std::vector<char> PromptSelector::parsePrompt(int i) {
         difficulty->parse(i);
 }
 

@@ -12,7 +12,7 @@ class PromptSelector {
                 PromptSelector(Parse* difficulty);
                 void setDifficulty(Parse* p);
                 Parse* getDifficulty();
-                std::vector<char> findDifficulty(int i);
+                std::vector<char> parsePrompt(int i);
 };
 
 #endif
