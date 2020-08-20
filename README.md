@@ -22,10 +22,10 @@
  >   * [C++11](https://en.cppreference.com/w/cpp/11) - Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to computer peripherals.
  >   * [SDL](https://www.libsdl.org/) - Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to computer peripherals.
  > * Through the implementation of customizable typing exercises delivered through a user-friendly graphical interface, users can improve keyboard proficiency at their own pace. 
- > * For now, this project will apply the Composite, Iterator, and Flyweight design patterns. 
- >   * The Composite design will be reflected by a hierarchy of graphic objects
- >   * The Iterator design will be applied when accessing lists of objects. *eg: List of words*
- >   * The Flyweight will reduce the cost of printing many characters onto the client window. 
+ > * For now, this project will apply the Composite, Flyweight, and Strategy design patterns. 
+ >   * The Composite design will be reflected by a hierarchy of graphic objects which will be grouped and displayed on the GUI
+ >   * The Flyweight design pattern will be used in order to print many characters onto the screen without having to create many objects at once. This will use a class with a hashmap which stores objects alreadt created.
+ >   * The Strategy design pattern implements 3 different prompt selecting algorithms to be selected during runtime depending on the desired prompt difficulty.
  > * [Project Specifications](https://docs.google.com/document/d/1ejA8TL6ZKhy_L3s7JrmXWeAPj9ibm9LW2zqrtt7pb3Q/edit?usp=sharing)
 
  > ## Phase II
