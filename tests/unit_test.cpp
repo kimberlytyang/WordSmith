@@ -4,6 +4,7 @@
 #include "character_test.hpp"
 #include "flyweight_test.hpp"
 #include "window_test.hpp"
+#include "parse_novice_test.hpp"
 #include "promptselector_test.hpp"
 
 int main(int argc, char **argv) {
