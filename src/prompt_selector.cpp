@@ -1,4 +1,4 @@
-#include "../header/promptselector.hpp"
+#include "../header/prompt_selector.hpp"
 
 PromptSelector::PromptSelector() {
 	difficulty = nullptr;

@@ -7,7 +7,7 @@
 #include "parse_novice_test.hpp"
 #include "parse_intermediate_test.hpp"
 #include "parse_advanced_test.hpp"
-#include "promptselector_test.hpp"
+#include "prompt_selector_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
