@@ -29,11 +29,11 @@
  > * [Project Specifications](https://docs.google.com/document/d/1ejA8TL6ZKhy_L3s7JrmXWeAPj9ibm9LW2zqrtt7pb3Q/edit?usp=sharing)
 
  > ## Phase II
- > * Composite Design Pattern
+ > * Composite Design Pattern<br/>
  ![composite pattern diagram](res/composite.png)
- > * Strategy Design Pattern
+ > * Strategy Design Pattern<br/>
  ![strategy pattern diagram](res/strategy.png)
- > * Flyweight Design Pattern
+ > * Flyweight Design Pattern<br/>
  ![flyweight pattern diagram](res/flyweight.png)
  > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
  >   * TODO, In progress, In testing, Done
