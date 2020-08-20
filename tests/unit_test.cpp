@@ -2,9 +2,9 @@
 #include "line_test.hpp"
 #include "rectangle_test.hpp"
 #include "character_test.hpp"
-#include "char_iterator_test.hpp"
 #include "flyweight_test.hpp"
 #include "window_test.hpp"
+#include "promptselector_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
