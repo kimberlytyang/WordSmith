@@ -5,7 +5,7 @@
 #include <fstream>
 #include <iostream>
 
-vector<char> ParseIntermediate::parse(int i) {
+vector<char> ParseAdvanced::parse(int i) {
 	vector<char> prompt;
 
 	ifstream inCount("res/prompt.txt");
