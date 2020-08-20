@@ -8,7 +8,7 @@
 vector<char> ParseNovice::parse(int i) {
 	vector<char> prompt;
 
-	ifstream inCount("res/novice.txt");
+	ifstream inCount("res/prompt.txt");
 	if (!inCount.is_open()) {
                 cout << "Error opening prompt file to count lines." << endl;
                 prompt.push_back('!');
@@ -23,7 +23,7 @@ vector<char> ParseNovice::parse(int i) {
 
 	inCount.close();
 
-	ifstream inFS("res/novice.txt");
+	ifstream inFS("res/prompt.txt");
 	if (!inFS.is_open()) {
 		cout << "Error opening prompt file to extract." << endl;
 		prompt.push_back('!');
