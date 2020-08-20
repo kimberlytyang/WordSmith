@@ -13,6 +13,7 @@ ADD_EXECUTABLE(test
 	src/window.cpp
 	src/promptselector.cpp
 	src/parse_novice.cpp
+	src/parse_intermediate.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
