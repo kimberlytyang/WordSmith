@@ -9,7 +9,7 @@ PromptSelector::PromptSelector(Parse* difficulty) {
 }
 
 std::vector<char> PromptSelector::parsePrompt(int i) {
-        difficulty->parse(i);
+        return difficulty->parse(i);
 }
 
 void PromptSelector::setDifficulty(Parse* p) {
