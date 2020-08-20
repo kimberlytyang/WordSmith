@@ -2,16 +2,17 @@
 #define PROMPT_SELECTOR_HPP
 
 #include "parse.hpp"
+#include <vector>
 
 class PromptSelector {
         private:
                 Parse* difficulty;
         public:
-                PromptSelector() {};
+                PromptSelector();
                 PromptSelector(Parse* difficulty);
                 void setDifficulty(Parse* p);
                 Parse* getDifficulty();
-                vector<char> findDifficulty(int i);
+                std::vector<char> findDifficulty(int i);
 };
 
 #endif

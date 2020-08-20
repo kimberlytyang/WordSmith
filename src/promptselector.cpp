@@ -1,10 +1,14 @@
 #include "../header/promptselector.hpp"
 
+PromptSelector::PromptSelector() {
+	difficulty = nullptr;
+}
+
 PromptSelector::PromptSelector(Parse* difficulty) {
         this->difficulty = difficulty;
 }
 
-vector<char> PromptSelector::findParse(int i) {
+std::vector<char> PromptSelector::findDifficulty(int i) {
         difficulty->parse(i);
 }
 
@@ -12,6 +16,6 @@ void PromptSelector::setDifficulty(Parse* p) {
         difficulty = p;
 }
 
-Parse* PromptSelector::getDifficulty() [
+Parse* PromptSelector::getDifficulty() {
         return difficulty;
 }
