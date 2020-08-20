@@ -15,6 +15,7 @@ vector<char> ParseIntermediate::parse(int i) {
                 return prompt;
         }
 
+	string hold = "";
 	while (getline(inCount, hold)) {
 		if (hold == "breakmedium") {
 			break;
@@ -22,7 +23,6 @@ vector<char> ParseIntermediate::parse(int i) {
 	}
 
 	int lineCount = 0;
-	string hold = "";
 	while (getline(inCount, hold)) {
 		if (hold == "breakhard") {
 			break;
@@ -39,7 +39,7 @@ vector<char> ParseIntermediate::parse(int i) {
 		return prompt;
 	}
 
-	while (getline(inCount, hold)) {
+	while (getline(inFS, hold)) {
                 if (hold == "breakmedium") {
                         break;
                 }
