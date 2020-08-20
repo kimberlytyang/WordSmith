@@ -18,6 +18,9 @@ vector<char> ParseNovice::parse(int i) {
 	int lineCount = 0;
 	string hold = "";
 	while (getline(inCount, hold)) {
+		if (hold == "breakmedium") {
+			break;
+		}
 		lineCount++;
 	}
 
@@ -36,7 +39,7 @@ vector<char> ParseNovice::parse(int i) {
 		i = lineCount;
 	}
 
-	string rawPrompt = "initial";
+	string rawPrompt = "";
 	int index = 0;
 	while (index < i) {
 		getline(inFS, rawPrompt);
