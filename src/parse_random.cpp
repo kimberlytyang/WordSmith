@@ -17,10 +17,8 @@ vector<char> ParseRandom::parse(int i) {
                 return prompt;
         }
 
-	int wordCount = 0;
 	string hold = "";
 	while (getline(inFS, hold)) {
-		wordCount++;
 		words.push_back(hold);
 	}
 
@@ -29,10 +27,10 @@ vector<char> ParseRandom::parse(int i) {
 	srand(i);
 	int index = 0;
 	string addWord = "";
-	int promptLength = 30;
+	int promptLength = (rand() % 15) + 16;
 
 	for (unsigned i = 0; i < promptLength; ++i) {
-		index = (rand() % 300);
+		index = rand() % words.size();
 		addWord = words.at(index);
 		for (unsigned k = 0; k < addWord.size(); ++k) {
 			prompt.push_back(addWord.at(k));

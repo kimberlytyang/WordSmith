@@ -15,6 +15,7 @@ ADD_EXECUTABLE(test
 	src/parse_novice.cpp
 	src/parse_intermediate.cpp
 	src/parse_advanced.cpp
+	src/parse_random.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
