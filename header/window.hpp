@@ -13,7 +13,7 @@ class Window : public Graphic {
 		Window();
 		Window(int x1, int y1, int x2, int y2);
 		
-		void draw();
+		void draw(SDL_Renderer*);
 		void insert(Graphic* g);
 		void remove(Graphic* g);
 		Graphic* getChild(int i);

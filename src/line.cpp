@@ -2,6 +2,7 @@
 #include <utility>
 #include <tuple>
 
+
 Line::Line() {
 	start = make_pair(0, 0);
 	end = make_pair(0, 0);
@@ -20,8 +21,12 @@ Line::Line(int xS, int yS, int xE, int yE, int r, int g, int b) {
         color = make_tuple(r, g, b);
 }
 
-void Line::draw() {
+void Line::draw(SDL_Renderer* r) {
+	SDL_SetRenderDrawColor(r, get<0>(this->getColor()), get<1>(this->getColor()), get<2>(this->getColor()), 255);
+	SDL_RenderDrawLine(r, this->getStart().first,this->getStart().second, this->getEnd().first, this->getEnd().second);
+	std::cout << this->getStart().first << " " << this->getStart().second << std::endl;
 
+	SDL_RenderPresent(r);
 }
 
 Graphic* Line::getChild(int i) {

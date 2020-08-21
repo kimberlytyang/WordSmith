@@ -14,7 +14,7 @@ class Rectangle : public Graphic {
 		Rectangle();
 		Rectangle(int, int, int, int);
 		Rectangle(int, int, int, int, int, int, int);
-		void draw(){};
+		void draw(SDL_Renderer*);
 		Graphic* getChild(int);
 		std::pair<int,int> getTL();
 		std::pair<int,int> getBR();

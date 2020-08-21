@@ -10,7 +10,11 @@ Window::Window(int x1, int y1, int x2, int y2) {
         br = std::make_pair(x2, y2);
 }
 
-void Window::draw() {};
+void Window::draw(SDL_Renderer* r) {
+	for (unsigned i = 0; i < graphics.size(); ++i) {
+		graphics.at(i)->draw(r);
+	}
+};
 
 void Window::insert(Graphic* g) {
 	graphics.push_back(g);

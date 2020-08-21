@@ -16,7 +16,7 @@ class Line : public Graphic {
 		Line();
 		Line(int xS, int yS, int xE, int yE);
 		Line(int xS, int yS, int xE, int yE, int r, int g, int b);
-		void draw();
+		void draw(SDL_Renderer*);
 		Graphic* getChild(int i);
 		pair<int, int> getStart();
 		pair<int, int> getEnd();

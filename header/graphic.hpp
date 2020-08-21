@@ -1,13 +1,16 @@
 #ifndef GRAPHIC_HPP
 #define GRAPHIC_HPP
 
+#include <iostream>
 #include <utility>
 #include <tuple>
+#include <SDL.h>
+#include <SDL_ttf.h>
 
 class Graphic {
 	public:
 		Graphic() {}
-		virtual void draw() = 0;
+		virtual void draw(SDL_Renderer*) = 0;
 		virtual void insert(Graphic*) {}
 		virtual void remove(Graphic*) {}
 		virtual Graphic* getChild(int i) = 0;

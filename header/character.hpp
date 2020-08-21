@@ -17,7 +17,7 @@ class Character : public Graphic {
 		Character(char c, int x, int y);
 		Character(char c, int x, int y, int r, int g, int b);
 
-		void draw();
+		void draw(SDL_Renderer*);
 
 		Graphic* getChild(int i); 
 		char getC();

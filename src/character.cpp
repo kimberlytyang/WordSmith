@@ -1,4 +1,5 @@
 #include "../header/character.hpp"
+#include <string>
 
 Character::Character() {
 	c = 0;
@@ -28,7 +29,25 @@ Character::Character(char c, int x, int y, int r, int g, int b) {
         color = std::make_tuple(r, g, b);
 }
 
-void Character::draw() {}
+void Character::draw(SDL_Renderer* r) {
+	std::cout << "drawing " << this->getC();
+	if (this->getC() == ' ') {
+		this->setC('_');
+	}
+	TTF_Font* font = TTF_OpenFont("res/courbd.ttf", 20);
+	SDL_Color color = { std::get<0>(this->getColor()),std::get<0>(this->getColor()),std::get<0>(this->getColor()) };
+	std::string temp(1, this->getC());
+	SDL_Surface* surface = TTF_RenderText_Solid(font, temp.c_str() , color);
+	SDL_Texture* texture = SDL_CreateTextureFromSurface(r, surface);
+	int texW = 0;
+	int texH = 0;
+	SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);
+	SDL_Rect dstrect = { this->getLocation().first, this->getLocation().second, texW, texH };
+	SDL_RenderCopy(r, texture, NULL, &dstrect);
+	SDL_RenderPresent(r);
+	TTF_CloseFont(font);
+
+}
 
 Graphic* Character::getChild(int i) { return this; }
 

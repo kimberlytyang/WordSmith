@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\character.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\flyweight.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\line.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rectangle.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\window.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parse_advanced.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parse_intermediate.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parse_novice.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\prompt_selector.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="header">
+      <UniqueIdentifier>{c7df166c-4cb3-47c8-bd3e-5c51d0a11ba0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{bd60c674-bc19-43b3-bf72-4520c4f049b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources">
+      <UniqueIdentifier>{dcef5911-956c-4415-b0b6-82d1dc7b90bc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="header\character.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\flyweight.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\graphic.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\line.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\rectangle.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\window.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\game.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\parse.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\parse_advanced.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\parse_intermediate.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\parse_novice.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="header\prompt_selector.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\prompt.txt">
+      <Filter>resources</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="res\comic.ttf">
+      <Filter>resources</Filter>
+    </Font>
+    <Font Include="res\rog.ttf">
+      <Filter>resources</Filter>
+    </Font>
+    <Font Include="res\courbd.ttf">
+      <Filter>resources</Filter>
+    </Font>
+  </ItemGroup>
+</Project>
