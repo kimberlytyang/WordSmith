@@ -17,7 +17,7 @@ void Statistics::readStats() {
         string statLine = "";
         string statVal = "";
         while (getline(inFS, statLine)) {
-                tuple<int ,int, int> entry = make_tuple(1, 1, 1);
+                tuple<int, int, int> entry(1, 1, 1);
                 istringstream ss(statLine);
 
                 ss >> statVal;
@@ -84,6 +84,8 @@ vector<string> Statistics::getStatsFormatted() {
 		entry = "Difficulty: " + diff + " -- WPM: " + to_string(get<1>(vars.at(i))) + " -- Accuracy: " + to_string(get<2>(vars.at(i)));
 		formatted.push_back(entry);
 	}
+
+	return formatted;
 }
 
 void Statistics::clearStats() {
