@@ -5,6 +5,7 @@
 #include "header/parse_novice.hpp"
 #include "header/parse_intermediate.hpp"
 #include "header/parse_advanced.hpp"
+#include "header/parse_random.hpp"
 #include "header/parse.hpp"
 #include "header/character.hpp"
 #include "header/flyweight.hpp"
@@ -13,10 +14,14 @@
 #include "header/window.hpp"
 #include <SDL.h>
 #include <SDL_ttf.h>
+#include <SDL_image.h>
 #include <stdio.h>
 #include <vector>
 #include <ctime>
 #include <string>
+#include <iostream>
+#include <cstdlib>
+#include <ctype.h>
 
 class Game {
 private:
@@ -38,6 +43,8 @@ private:
 	int diff = 0;
 	PromptSelector* ps = nullptr;
 	string gameName = "";
+	int frame = 0;
+	int WPM = 0;
 public:
 	Game();
 	~Game();
@@ -52,9 +59,11 @@ public:
 	void updateTimer(SDL_Renderer* r, int t);
 	void setDiff(int i) { diff = i; }
 	Parse* getDiffG(int i);
-	void fill(Flyweight* fw, int &len, int line, char ch);
+	void fill(Flyweight* fw, int &len, int line, char ch, int cy);
 	void drawString(string s, int x, int y, int r, int g, int b, int f);
 	SDL_Renderer* getRenderer() { return renderer;}
+	void cycleImage(string s);
+	void drawImage(string path, int x, int y, int w, int h);
 };
 
 #endif // !GAME_HPP

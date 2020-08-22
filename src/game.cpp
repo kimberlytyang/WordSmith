@@ -1,9 +1,5 @@
 #include "../header/game.hpp"
 
-#include <iostream>
-#include <time.h>
-#include <ctype.h>
-
 Game::Game() {
 	gameWindow = new Window();
 }
@@ -51,15 +47,23 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		Line* Underline4 = new Line(50, 550, 750, 550, 255, 255, 255);
 		gameWindow->insert(Underline4);
 		
+		
+		srand(std::time(NULL));
+
 		Window* prompt = new Window(0, 0, 0, 0);
 		ps = new PromptSelector();
 		ps->setDifficulty(this->getDiffG(diff));
+
 
 
 		rawprompt = (rand() % 10 + 1);
 		std::vector<char> vc = ps->parsePrompt(rawprompt);
 
 		gameWindow->draw(renderer);
+
+		std::vector<std::string>d{ "(Novice)", "(Intermediate)", "(Advanced)", "(Scrambled)" };
+
+		this->drawString(d.at(diff), 0, 50, 255, 255, 255, 20);
 
 		Flyweight* fw = new Flyweight();
 
@@ -86,7 +90,9 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 		this->drawString("WORDSMITH", 0, 0, 255, 255, 255, 40);
 		isRunning = true;
-		this->drawString("PRESS ENTER TO BEGIN", 0, 150, 255, 255, 255, 25);
+		this->drawString("PRESS ENTER TO BEGIN", 7, 150, 255, 255, 255, 25);
+		
+		
 
 	}
 	else {
@@ -95,7 +101,9 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 }
 
 void Game::handleEvents() {
-	
+	tick++;
+	//std::cout << "tick: " << tick << std::endl;
+	this->cycleImage("slow");
 	SDL_Event event;
 	SDL_PollEvent(&event);
 	switch (event.type) {
@@ -137,7 +145,7 @@ void Game::handleEvents() {
 						const char* kp1 = SDL_GetKeyName(event1.key.keysym.sym);
 						//cout << *kp1;
 						if (strcmp(kp1, "Left Shift") == 0 || strcmp(kp1, "Right Shift") == 0) {
-							this->updateTimer(renderer, currtime / CLOCKS_PER_SEC);
+							//this->updateTimer(renderer, currtime / CLOCKS_PER_SEC);
 							SDL_Event eventShift;
 							SDL_PollEvent(&eventShift);
 							if (eventShift.type == SDL_KEYDOWN) {
@@ -145,7 +153,7 @@ void Game::handleEvents() {
 								if (vc.at(currChar) == *shiftKey) {
 									//std::cout << "Match " << vc.at(currChar) << std::endl;
 
-									this->fill(fw, len, line, vc.at(currChar));
+									this->fill(fw, len, line, vc.at(currChar),0);
 								}
 								else {
 									++mistakes;
@@ -154,7 +162,7 @@ void Game::handleEvents() {
 						} else {
 							if (vc.at(currChar) == ' ') {
 								if (strcmp(kp1, "Space") == 0) {
-									this->fill(fw, len, line, vc.at(currChar));
+									this->fill(fw, len, line, vc.at(currChar),0);
 									break;
 								}
 									++mistakes;
@@ -165,43 +173,43 @@ void Game::handleEvents() {
 								break;
 							} else if (vc.at(currChar) == '.') {
 								if (strcmp(kp1, ".") == 0) {
-									this->fill(fw, len, line, vc.at(currChar));
+									this->fill(fw, len, line, vc.at(currChar),0);
 									break;
 								}
 									++mistakes;
 							} else if (vc.at(currChar) == '\'') {
 								if (strcmp(kp1, "'") == 0) {
-									this->fill(fw, len, line, vc.at(currChar));
+									this->fill(fw, len, line, vc.at(currChar),0);
 									break;
 								}
 									++mistakes;
 							} else if (vc.at(currChar) == '?') {
 								if (strcmp(kp1, "?") == 0) {
-									this->fill(fw, len, line, vc.at(currChar));
+									this->fill(fw, len, line, vc.at(currChar),0);
 									break;
 								}
 								++mistakes;
 							} else if (vc.at(currChar) == ':') {
 								if (strcmp(kp1, ":") == 0) {
-									this->fill(fw, len, line, vc.at(currChar));
+									this->fill(fw, len, line, vc.at(currChar),0);
 									break;
 								}
 								++mistakes;
 							} else if (vc.at(currChar) == '"') {
 								if (strcmp(kp1, "\"") == 0) {
-									this->fill(fw, len, line, vc.at(currChar));
+									this->fill(fw, len, line, vc.at(currChar),0);
 									break;
 								}
 								++mistakes;
 							} else if (vc.at(currChar) == ',') {
 								if (strcmp(kp1, ",") == 0) {
-									this->fill(fw, len, line, vc.at(currChar));
+									this->fill(fw, len, line, vc.at(currChar),0);
 									break;
 								}
 								++mistakes;
 							}
 							if (toupper(vc.at(currChar)) == *kp1 && islower(vc.at(currChar))) {
-								this->fill(fw, len, line, vc.at(currChar));
+								this->fill(fw, len, line, vc.at(currChar), 0);
 							}
 							else {
 								//std::cout << "no match " << toupper(vc.at(currChar)) << " " << tolower(*kp1);
@@ -213,17 +221,17 @@ void Game::handleEvents() {
 					}
 					if (currChar >= vc.size()) {
 
-						drawString("PRESS ENTER TO RESTART", 300, 200, 255, 255, 255, 30);
-						drawString("PRESS q TO QUIT", 300, 250, 255, 255, 255, 30);
+						drawString("PRESS ENTER TO RESTART", 225, 200, 255, 255, 255, 20);
+						drawString("PRESS q TO QUIT", 225, 250, 255, 255, 255, 20);
 
 						while (true) {
 							SDL_Event restart;
 							SDL_PollEvent(&restart);
-							std::cout << "222" << std::endl;
+							tick++;
+							this->cycleImage("slow");
 							if (restart.type == SDL_KEYDOWN) {
 								std::cout << "226" << std::endl;
-								const char* kp = SDL_GetKeyName(restart.key.keysym.sym);
-								
+								const char* kp = SDL_GetKeyName(restart.key.keysym.sym);	
 								if (strcmp(kp, "Return") == 0) {
 									std::cout << "230" << std::endl;
 									break;
@@ -261,10 +269,10 @@ void Game::handleEvents() {
 
 void Game::updateTimer(SDL_Renderer* r, int t) {
 	ptime = t;
-
+	this->cycleImage("ig");
 	timeblock->draw(r);
 
-	int x = 0;
+	int x = 7;
 	int y = 150;
 
 	string stime = to_string(t) + " seconds";
@@ -276,6 +284,7 @@ void Game::updateTimer(SDL_Renderer* r, int t) {
 
 	int wpm = (currChar / 5.5) / (ptime/60.0);
 	std::cout << wpm << std::endl;
+	WPM = wpm;
 	string wpmString = to_string(wpm) + " WPM";
 	if (t == 0) {
 		wpmString = "0 WPM";
@@ -299,9 +308,13 @@ void Game::updateTimer(SDL_Renderer* r, int t) {
 void Game::diffSelector() {
 	Rectangle* background = new Rectangle(0, 0, 800, 600, 0, 130, 0);
 	background->draw(renderer);
+	this->drawString("Select game mode with the arrow keys", 5, 0, 255, 255, 255, 20);
+	this->drawString("Enter to confirm", 5, 30, 255, 255, 255, 20);
+	this->drawString("q to quit", 5, 60, 255, 255, 255, 20);
 	this->drawString("Novice", 366, 200, 255, 255, 255, 20);
 	this->drawString("Intermediate", 166, 300, 255, 255, 255, 20);
 	this->drawString("Advanced", 532, 300, 255, 255, 255, 20);
+	this->drawString("Scrambled", 356, 400, 255, 255, 255, 20);
 	Window* w = new Window();
 	Line* n = new Line(366, 230, 430, 230, 0, 0, 0);
 	w->insert(n);
@@ -309,7 +322,9 @@ void Game::diffSelector() {
 	w->insert(i);
 	Line* a = new Line(532, 330, 622, 330, 255, 255, 255);
 	w->insert(a);
-
+	Line* s = new Line(356, 430, 459, 430, 255, 255, 255);
+	w->insert(s);
+	this->drawImage("res/start.jpg", 600, 0, 200, 200);
 	bool notChose = false;
 	int choice = 0;
 	while (!notChose) {
@@ -323,23 +338,32 @@ void Game::diffSelector() {
 				w->getChild(choice)->setColor(255, 255, 255);
 				choice = 0;
 				w->getChild(choice)->setColor(0, 0, 0);
-			} else if (strcmp(ak, "Left") == 0) {
+			}
+			else if (strcmp(ak, "Left") == 0) {
 				w->getChild(choice)->setColor(255, 255, 255);
 				choice = 1;
 				w->getChild(choice)->setColor(0, 0, 0);
-			} else if(strcmp(ak, "Right") == 0){
+			}
+			else if (strcmp(ak, "Right") == 0) {
 				w->getChild(choice)->setColor(255, 255, 255);
 				choice = 2;
+				w->getChild(choice)->setColor(0, 0, 0);
+			} else if(strcmp(ak, "Down") == 0){
+				w->getChild(choice)->setColor(255, 255, 255);
+				choice = 3;
 				w->getChild(choice)->setColor(0, 0, 0);
 			} else if (strcmp(ak, "Return") == 0) {
 				diff = choice;
 				std::cout << "CHOICE" << std::endl;
 				return;
+			} else if (strcmp(ak, "Q") == 0) {
+				this->clean();
+				exit(0);
 			}
 			
 		}
 	}
-
+	
 }
 
 void Game::drawString(string s, int x, int y, int r, int g, int b, int f) {
@@ -355,7 +379,10 @@ void Game::drawString(string s, int x, int y, int r, int g, int b, int f) {
 	SDL_RenderPresent(renderer);
 }
 
-void Game::fill(Flyweight* fw, int &len, int line, char ch) {
+void Game::fill(Flyweight* fw, int &len, int line, char ch, int cy) {
+	if (cy == 0) {
+		this->cycleImage("ig");
+	}
 	Character* c = fw->hash(ch);
 	c->setLocation(50 + len, 325 + (line * 50));
 	c->setColor(0, 0, 0);
@@ -378,11 +405,43 @@ bool Game::running() {
 Parse* Game::getDiffG(int i) {
 	if (i == 0) {
 		return new ParseNovice();
-	} else if (i == 1) {
+	}
+	else if (i == 1) {
 		return new ParseIntermediate();
-	} else if (i == 2) {
+	}
+	else if (i == 2) {
 		return new ParseAdvanced();
+	}
+	else if(i == 3) {
+		return new ParseRandom();
 	} else {
 		return nullptr;
+	}
+}
+
+void Game::drawImage(string s, int x, int y, int w, int h) {
+	SDL_Texture* img;
+	SDL_Surface* tempSurface = IMG_Load(s.c_str());
+	img = SDL_CreateTextureFromSurface(renderer, tempSurface);
+	SDL_FreeSurface(tempSurface);
+	int texW = w;
+	int texH = h;
+	SDL_Rect dstrect = { x,y,texW,texH};
+	
+	SDL_RenderCopy(renderer, img, NULL, &dstrect);
+	SDL_RenderPresent(renderer);
+}
+
+void Game::cycleImage(string s) {
+	if (s == "slow") {
+		if (tick % 50000 == 0) {
+			std::vector<string> path{ "res/1.jpg", "res/2.jpg", "res/3.jpg", "res/4.jpg",  "res/5.jpg",  "res/6.jpg",  "res/7.jpg",  "res/8.jpg",  "res/9.jpg",  "res/10.jpg", "res/11.jpg",  "res/12.jpg" };
+			frame++;
+			this->drawImage(path.at(frame % 11), 550, 50, 200, 200);
+		}
+	} else if(s == "ig"){
+		std::vector<string> path{ "res/1.jpg", "res/2.jpg", "res/3.jpg", "res/4.jpg",  "res/5.jpg",  "res/6.jpg",  "res/7.jpg",  "res/8.jpg",  "res/9.jpg",  "res/10.jpg", "res/11.jpg",  "res/12.jpg" };
+	    frame++;
+	    this->drawImage(path.at(frame % 11), 550, 50, 200, 200);
 	}
 }

@@ -35,6 +35,9 @@ vector<char> ParseRandom::parse(int i) {
 		for (unsigned k = 0; k < addWord.size(); ++k) {
 			prompt.push_back(addWord.at(k));
 		}
+		if (i > 0 && (i % 6 == 0)) {
+			prompt.push_back('/');
+		}
 		if (i < promptLength - 1) {
 			prompt.push_back(' ');
 		}

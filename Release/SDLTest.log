@@ -1,39 +1,14 @@
-﻿  main.cpp
-  character.cpp
-C:\Users\atamb\source\repos\SDLTest\SDLTest\src\character.cpp(38,33): warning C4838: conversion from 'int' to 'Uint8' requires a narrowing conversion
-C:\Users\atamb\source\repos\SDLTest\SDLTest\src\character.cpp(38,63): warning C4838: conversion from 'int' to 'Uint8' requires a narrowing conversion
-C:\Users\atamb\source\repos\SDLTest\SDLTest\src\character.cpp(38,93): warning C4838: conversion from 'int' to 'Uint8' requires a narrowing conversion
-  flyweight.cpp
-  game.cpp
-C:\Users\atamb\source\repos\SDLTest\SDLTest\src\game.cpp(214,19): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\atamb\source\repos\SDLTest\SDLTest\src\game.cpp(277,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\atamb\source\repos\SDLTest\SDLTest\src\game.cpp(289,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\atamb\source\repos\SDLTest\SDLTest\src\game.cpp(347,22): warning C4838: conversion from 'int' to 'Uint8' requires a narrowing conversion
-C:\Users\atamb\source\repos\SDLTest\SDLTest\src\game.cpp(347,24): warning C4838: conversion from 'int' to 'Uint8' requires a narrowing conversion
-C:\Users\atamb\source\repos\SDLTest\SDLTest\src\game.cpp(347,26): warning C4838: conversion from 'int' to 'Uint8' requires a narrowing conversion
-  line.cpp
-  parse_advanced.cpp
-C:\Users\atamb\source\repos\SDLTest\SDLTest\src\parse_advanced.cpp(60,20): warning C4018: '<': signed/unsigned mismatch
-  parse_intermediate.cpp
-C:\Users\atamb\source\repos\SDLTest\SDLTest\src\parse_intermediate.cpp(63,20): warning C4018: '<': signed/unsigned mismatch
-  parse_novice.cpp
-C:\Users\atamb\source\repos\SDLTest\SDLTest\src\parse_novice.cpp(51,20): warning C4018: '<': signed/unsigned mismatch
-  prompt_selector.cpp
-  rectangle.cpp
-  window.cpp
+﻿  game.cpp
+C:\Users\atamb\source\repos\SDLTest\SDLTest\src\game.cpp(51,18): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\atamb\source\repos\SDLTest\SDLTest\src\game.cpp(222,19): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\atamb\source\repos\SDLTest\SDLTest\src\game.cpp(285,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\atamb\source\repos\SDLTest\SDLTest\src\game.cpp(298,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\atamb\source\repos\SDLTest\SDLTest\src\game.cpp(371,22): warning C4838: conversion from 'int' to 'Uint8' requires a narrowing conversion
+C:\Users\atamb\source\repos\SDLTest\SDLTest\src\game.cpp(371,24): warning C4838: conversion from 'int' to 'Uint8' requires a narrowing conversion
+C:\Users\atamb\source\repos\SDLTest\SDLTest\src\game.cpp(371,26): warning C4838: conversion from 'int' to 'Uint8' requires a narrowing conversion
   Generating code
-  60 of 589 functions (10.2%) were compiled, the rest were copied from previous compilation.
+  2 of 660 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-character.obj : warning LNK4020: a type record in 'c:\users\atamb\source\repos\sdltest\sdltest\release\vc142.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-flyweight.obj : warning LNK4020: a type record in 'c:\users\atamb\source\repos\sdltest\sdltest\release\vc142.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-game.obj : warning LNK4020: a type record in 'c:\users\atamb\source\repos\sdltest\sdltest\release\vc142.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-line.obj : warning LNK4020: a type record in 'c:\users\atamb\source\repos\sdltest\sdltest\release\vc142.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-parse_advanced.obj : warning LNK4020: a type record in 'c:\users\atamb\source\repos\sdltest\sdltest\release\vc142.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-parse_intermediate.obj : warning LNK4020: a type record in 'c:\users\atamb\source\repos\sdltest\sdltest\release\vc142.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-parse_novice.obj : warning LNK4020: a type record in 'c:\users\atamb\source\repos\sdltest\sdltest\release\vc142.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-prompt_selector.obj : warning LNK4020: a type record in 'c:\users\atamb\source\repos\sdltest\sdltest\release\vc142.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-rectangle.obj : warning LNK4020: a type record in 'c:\users\atamb\source\repos\sdltest\sdltest\release\vc142.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-window.obj : warning LNK4020: a type record in 'c:\users\atamb\source\repos\sdltest\sdltest\release\vc142.pdb' is corrupted; some symbols and types may not be accessible from the debugger
   SDLTest.vcxproj -> C:\Users\atamb\source\repos\SDLTest\Release\SDLTest.exe

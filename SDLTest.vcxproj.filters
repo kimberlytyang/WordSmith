@@ -32,6 +32,9 @@
     <ClCompile Include="src\prompt_selector.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="src\parse_random.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="header">
@@ -81,9 +84,15 @@
     <ClInclude Include="header\prompt_selector.hpp">
       <Filter>header</Filter>
     </ClInclude>
+    <ClInclude Include="header\parse_random.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="res\prompt.txt">
+      <Filter>resources</Filter>
+    </Text>
+    <Text Include="res\random.txt">
       <Filter>resources</Filter>
     </Text>
   </ItemGroup>
@@ -97,5 +106,10 @@
     <Font Include="res\courbd.ttf">
       <Filter>resources</Filter>
     </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\type.PNG">
+      <Filter>resources</Filter>
+    </Image>
   </ItemGroup>
 </Project>
