@@ -13,7 +13,7 @@ class Statistics {
 	private:
 		vector<tuple<int, int, int>> vars;
 	public:
-		Statistics();
+		Statistics() {}
 		void readStats();
 		void writeStats();
 		void addStats(int difficulty, int wpm, int accuracy);
