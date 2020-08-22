@@ -12,15 +12,16 @@
 //MUST BE RUN IN VSCODE OR OTHER IDE THAT SUPPORTS CTIME
 
 int main(){
+    
     std::string prompt = "the fitness gram pacer test is a multi stage test";
     std::cout << "Type the following fast: " << std::endl;
     std::cout << prompt << std::endl;
-    clock_t t = clock();
+    int t = time(NULL);
     std::string ans = "";
     getline(std::cin, ans);
-    t = clock() - t;
+    t = time(NULL) - t;
 
-    std::cout << "TIME: " << t/CLOCKS_PER_SEC << " seconds" << std::endl;
+    std::cout << "TIME: " << t << " seconds" << std::endl;
     double correct = 0;
     int size = 0;
     if(prompt.size()>ans.size()){
@@ -36,7 +37,6 @@ int main(){
         } 
     }
     std::cout << "ACCURACY: " <<( correct / prompt.size() )*100<< std::endl;
-    double temp = t/CLOCKS_PER_SEC;
-    std::cout << "WPM: " << (prompt.size()/5.5)/((temp)/60.0);
-
+    double temp = t * 1.0;
+    std::cout << "WPM: " << (prompt.size()/5.5)/((temp)/60.0) << std::endl;
 }
