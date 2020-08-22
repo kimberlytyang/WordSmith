@@ -1,10 +1,6 @@
 ![CI](https://github.com/cs100/final-project-2ndstorystudio/workflows/CI/badge.svg)
 # WordSmith
- > Your author list below should include links to all members GitHub and should begin with a "\>"
- 
  > Authors: [Albert Tambalo](https://github.com/alberttambalo), [Kimberly Yang](https://github.com/kimberlytyang), [Christopher Young](https://github.com/ChrisYoung1048)
- 
- > You will be forming a group of **TWO - THREE** students and work on an interesting project that you will propose yourself (in this `README.md` document). You can pick any project that you'd like, but it needs ot implement three design patterns. Each of the members in a group is expected to work on at least one design pattern and its test cases. You can, of course, help each other, but it needs to be clear who will be responsible for which pattern and for which general project features.
  
  > ## Expectations
  > * Incorporate **three** distinct design patterns, *two* of the design patterns need to be taught in this course:
@@ -29,12 +25,6 @@
  > * [Project Specifications](https://docs.google.com/document/d/1ejA8TL6ZKhy_L3s7JrmXWeAPj9ibm9LW2zqrtt7pb3Q/edit?usp=sharing)
 
  > ## Phase II
- > * Composite Design Pattern<br/>
- ![composite pattern diagram](res/composite.png)
- > * Strategy Design Pattern<br/>
- ![strategy pattern diagram](res/strategy.png)
- > * Flyweight Design Pattern<br/>
- ![flyweight pattern diagram](res/flyweight.png)
  > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
  >   * TODO, In progress, In testing, Done
  >   * You can change these or add more if you'd like, but we should be able to identify at least these.
@@ -43,6 +33,12 @@
  > * Break down the first "Epic" into smaller user stories (issues) and assign them to the appropriate team member.
 ## Class Diagram
  > Include a class diagram and a description of the diagram. This should be in sufficient detail that another group could pick up the project this point and successfully complete it.
+ > * Composite Design Pattern<br/>
+ ![composite pattern diagram](res/composite.png)
+ > * Strategy Design Pattern<br/>
+ ![strategy pattern diagram](res/strategy.png)
+ > * Flyweight Design Pattern<br/>
+ ![flyweight pattern diagram](res/flyweight.png)
  
  > ## Phase III
  > You will need to schedule two check-in's with the TA (during lab hours or office hours) where your entire group will meet with them and discuss:
