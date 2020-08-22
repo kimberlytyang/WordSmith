@@ -81,7 +81,7 @@ vector<string> Statistics::getStatsFormatted() {
 			diff = "Unknown";
 		}
 
-		entry = "Difficulty: " + diff + " -- WPM: " + to_string(get<1>(vars.at(i))) + " -- Accuracy: " + to_string(get<2>(vars.at(i)));
+		entry = "Difficulty: " + diff + " -- WPM: " + to_string(get<1>(vars.at(i))) + " -- Accuracy: " + to_string(get<2>(vars.at(i))) + "%";
 		formatted.push_back(entry);
 	}
 

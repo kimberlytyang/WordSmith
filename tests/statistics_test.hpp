@@ -82,10 +82,10 @@ TEST(StatisticsTest, getStatsFormattedTest) {
         test->addStats(1, 49, 64);
         vector<string> hold = test->getStatsFormatted();
 
-        EXPECT_EQ(hold.at(0), "Difficulty: Novice -- WPM: 50 -- Accuracy: 50");
-        EXPECT_EQ(hold.at(1), "Difficulty: Advanced -- WPM: 75 -- Accuracy: 100");
-        EXPECT_EQ(hold.at(2), "Difficulty: Intermediate -- WPM: 83 -- Accuracy: 99");
-        EXPECT_EQ(hold.at(3), "Difficulty: Novice -- WPM: 49 -- Accuracy: 64");
+        EXPECT_EQ(hold.at(0), "Difficulty: Novice -- WPM: 50 -- Accuracy: 50%");
+        EXPECT_EQ(hold.at(1), "Difficulty: Advanced -- WPM: 75 -- Accuracy: 100%");
+        EXPECT_EQ(hold.at(2), "Difficulty: Intermediate -- WPM: 83 -- Accuracy: 99%");
+        EXPECT_EQ(hold.at(3), "Difficulty: Novice -- WPM: 49 -- Accuracy: 64%");
 }
 
 TEST(StatisticsTest, MultiFunctionTest) {
@@ -133,10 +133,10 @@ TEST(StatisticsTest, MultiFunctionTest) {
         
         vector<string> hold3 = test->getStatsFormatted();
 
-        EXPECT_EQ(hold3.at(0), "Difficulty: Advanced -- WPM: 82 -- Accuracy: 84");
-        EXPECT_EQ(hold3.at(1), "Difficulty: Intermediate -- WPM: 12 -- Accuracy: 34");
-        EXPECT_EQ(hold3.at(2), "Difficulty: Novice -- WPM: 38 -- Accuracy: 48");
-        EXPECT_EQ(hold3.at(3), "Difficulty: Intermediate -- WPM: 74 -- Accuracy: 25");
+        EXPECT_EQ(hold3.at(0), "Difficulty: Advanced -- WPM: 82 -- Accuracy: 84%");
+        EXPECT_EQ(hold3.at(1), "Difficulty: Intermediate -- WPM: 12 -- Accuracy: 34%");
+        EXPECT_EQ(hold3.at(2), "Difficulty: Novice -- WPM: 38 -- Accuracy: 48%");
+        EXPECT_EQ(hold3.at(3), "Difficulty: Intermediate -- WPM: 74 -- Accuracy: 25%");
 }
 
 #endif // STATISTICS_TEST_HPP
