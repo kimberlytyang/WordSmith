@@ -3,6 +3,7 @@
 #include "../header/parse_novice.hpp"
 #include "../header/parse_random.hpp"
 #include "../header/prompt_selector.hpp"
+#include "../header/statistics.hpp"
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -61,8 +62,16 @@ int main(){
             ++correct;
         } 
     }
-    std::cout << "ACCURACY: " <<( correct / prompt.size() )*100<< std::endl;
+    int accuracy = (correct / prompt.size())*100;
+    std::cout << "ACCURACY: " << accuracy << std::endl;
     double temp = t * 1.0;
     int WPM = (prompt.size()/5.5)/((temp)/60.0);
     std::cout << "WPM: " << WPM  << std::endl;
+    Statistics* s = new Statistics();
+    if(WPM < 0 || accuracy > 100 || accuracy < 0){
+	return;
+    }
+    s->readStats();
+    s->addStats(choice, WPM, accuracy); 
+    s->writeStats();
 }
