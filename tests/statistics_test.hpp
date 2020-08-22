@@ -6,7 +6,7 @@
 #include <fstream>
 
 // Tests have passed in hammer
-// Skipping all tests because GitHub Actions is unable to open prompt.txt correctly
+// Skipping all tests because GitHub Actions is unable to open stats.txt correctly
 
 TEST(StatisticsTest, SortByDifficulty) {
 	GTEST_SKIP();
