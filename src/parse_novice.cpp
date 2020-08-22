@@ -1,11 +1,11 @@
-#include "../header/char_iterator.hpp"
+#include "../header/parse_novice.hpp"
 
 #include <vector>
 #include <string>
 #include <fstream>
 #include <iostream>
 
-vector<char> CharIterator::loadPrompt(int num) {
+vector<char> ParseNovice::parse(int i) {
 	vector<char> prompt;
 
 	ifstream inCount("res/prompt.txt");
@@ -18,6 +18,9 @@ vector<char> CharIterator::loadPrompt(int num) {
 	int lineCount = 0;
 	string hold = "";
 	while (getline(inCount, hold)) {
+		if (hold == "breakmedium") {
+			break;
+		}
 		lineCount++;
 	}
 
@@ -30,15 +33,15 @@ vector<char> CharIterator::loadPrompt(int num) {
 		return prompt;
 	}
 
-	if (num < 1) {
-		num = 1;
-	} else if (num > lineCount) {
-		num = lineCount;
+	if (i < 1) {
+		i = 1;
+	} else if (i > lineCount) {
+		i = lineCount;
 	}
 
-	string rawPrompt = "initial";
+	string rawPrompt = "";
 	int index = 0;
-	while (index < num) {
+	while (index < i) {
 		getline(inFS, rawPrompt);
 		index++;
 	}
