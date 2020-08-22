@@ -9,6 +9,7 @@
 #include "parse_advanced_test.hpp"
 #include "parse_random_test.hpp"
 #include "prompt_selector_test.hpp"
+#include "statistics_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
