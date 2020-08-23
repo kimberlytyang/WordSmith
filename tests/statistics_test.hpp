@@ -195,10 +195,10 @@ TEST(StatisticsTest, getStatsFormattedTest) {
         test->addStats(1, 49, 64);
         vector<string> hold = test->getStatsFormatted();
 
-        EXPECT_EQ(hold.at(0), "Difficulty: Novice -- WPM: 50 -- Accuracy: 50%");
-        EXPECT_EQ(hold.at(1), "Difficulty: Advanced -- WPM: 75 -- Accuracy: 100%");
-        EXPECT_EQ(hold.at(2), "Difficulty: Intermediate -- WPM: 83 -- Accuracy: 99%");
-        EXPECT_EQ(hold.at(3), "Difficulty: Novice -- WPM: 49 -- Accuracy: 64%");
+        EXPECT_EQ(hold.at(0), "Difficulty: Intermediate -- WPM: 50 -- Accuracy: 50%");
+        EXPECT_EQ(hold.at(1), "Difficulty: Scrambled -- WPM: 75 -- Accuracy: 100%");
+        EXPECT_EQ(hold.at(2), "Difficulty: Advanced -- WPM: 83 -- Accuracy: 99%");
+        EXPECT_EQ(hold.at(3), "Difficulty: Intermediate -- WPM: 49 -- Accuracy: 64%");
 }
 
 TEST(StatisticsTest, MultiFunctionTest) {
