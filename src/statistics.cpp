@@ -72,12 +72,14 @@ vector<string> Statistics::getStatsFormatted() {
 	string entry = "";
 	string diff = "";
 	for (unsigned i = 0; i < vars.size(); ++i) {
-		if (get<0>(vars.at(i)) == 1) {
+		if (get<0>(vars.at(i)) == 0) {
 			diff = "Novice";
-		} else if (get<0>(vars.at(i)) == 2) {
+		} else if (get<0>(vars.at(i)) == 1) {
 			diff = "Intermediate";
-		} else if (get<0>(vars.at(i)) == 3) {
+		} else if (get<0>(vars.at(i)) == 2) {
 			diff = "Advanced";
+		} else if (get<0>(vars.at(i)) == 3){
+			diff = "Scrambled";
 		} else {
 			diff = "Unknown";
 		}
