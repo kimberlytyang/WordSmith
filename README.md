@@ -34,11 +34,11 @@
 ## Class Diagram
  > Include a class diagram and a description of the diagram. This should be in sufficient detail that another group could pick up the project this point and successfully complete it.
  > * Composite Design Pattern<br/>
- ![composite pattern diagram](res/composite.png)
+ ![composite pattern diagram](WordsmithVSproject/Wordsmith/res/composite.png)
  > * Strategy Design Pattern<br/>
- ![strategy pattern diagram](res/strategy.png)
+ ![strategy pattern diagram](WordsmithVSproject/Wordsmith/res/strategy.png)
  > * Flyweight Design Pattern<br/>
- ![flyweight pattern diagram](res/flyweight.png)
+ ![flyweight pattern diagram](WordsmithVSproject/Wordsmith/res/flyweight.png)
  
  > ## Phase III
  > You will need to schedule two check-in's with the TA (during lab hours or office hours) where your entire group will meet with them and discuss:
