@@ -76,10 +76,10 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 				temp->setLocation(50 + len, 325 + (line * 50));
 			}
 			else {
-				line += 1;
-				len = 0;
 				temp->setLocation(50 + len, 325 + (line * 50));
-				continue;
+				line += 1;
+				len = -17;
+				//continue;
 			}
 			temp->setColor(255, 255, 255);
 			prompt->insert(temp);
@@ -92,8 +92,6 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		isRunning = true;
 		this->drawString("PRESS ENTER TO BEGIN", 7, 150, 255, 255, 255, 25);
 		
-		
-
 	}
 	else {
 		isRunning = false;
@@ -150,13 +148,18 @@ void Game::handleEvents() {
 							SDL_PollEvent(&eventShift);
 							if (eventShift.type == SDL_KEYDOWN) {
 								const char* shiftKey = SDL_GetKeyName(eventShift.key.keysym.sym);
-								if (vc.at(currChar) == *shiftKey) {
+								if ((vc.at(currChar) == *shiftKey)&&(isupper(vc.at(currChar)))) {
 									//std::cout << "Match " << vc.at(currChar) << std::endl;
 
 									this->fill(fw, len, line, vc.at(currChar),0);
-								}
-								else {
+									
+									break;
+								} else if(vc.at(currChar) != *shiftKey && isupper(vc.at(currChar)) && strcmp(shiftKey, "Left Shift") != 0 && strcmp(shiftKey, "Right Shift") != 0){
+									std::cout << "159" << std::endl;
 									++mistakes;
+									break;
+								} else {
+									break;
 								}
 							}
 						} else {
@@ -165,12 +168,16 @@ void Game::handleEvents() {
 									this->fill(fw, len, line, vc.at(currChar),0);
 									break;
 								}
+								std::cout << "172" << std::endl;
 									++mistakes;
 							} else if (vc.at(currChar) == '/') {
-								line++;
-								len = 0;
-								++currChar;
-								break;
+								if (strcmp(kp1, "Space") == 0) {
+									this->fill(fw, len, line, vc.at(currChar), 0);////
+									line++;
+									len = 0;
+									break;
+								}
+
 							} else if (vc.at(currChar) == '.') {
 								if (strcmp(kp1, ".") == 0) {
 									this->fill(fw, len, line, vc.at(currChar),0);

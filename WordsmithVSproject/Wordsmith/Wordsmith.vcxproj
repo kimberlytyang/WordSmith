@@ -132,12 +132,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\include;$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\lib;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\lib;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\include;$(ProjectDir)SDLIncludes\SDL2-2.0.12\include;$(ProjectDir)res;$(ProjectDir);$(ProjectDir)header;$(ProjectDir)src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)SDLIncludes\SDL2-2.0.12\lib;$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\include;$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\lib;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\lib;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\include;$(ProjectDir)SDLIncludes\SDL2-2.0.12\include;$(ProjectDir)res;$(ProjectDir);$(ProjectDir)header;$(ProjectDir)src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\lib;$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\lib\x86;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\lib\x86;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\lib;$(ProjectDir);$(ProjectDir)res;$(ProjectDir)header;$(ProjectDir)src;$(ProjectDir)SDLIncludes\SDL2-2.0.12\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)SDLIncludes\SDL2-2.0.12\lib;$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\lib;$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\lib\x86;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\lib\x86;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\lib;$(ProjectDir);$(ProjectDir)res;$(ProjectDir)header;$(ProjectDir)src;$(ProjectDir)SDLIncludes\SDL2-2.0.12\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -149,14 +149,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\include;$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\lib;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\lib;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\include;$(ProjectDir)SDLIncludes\SDL2-2.0.12\include;$(ProjectDir)res;$(ProjectDir);$(ProjectDir)header;$(ProjectDir)src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)SDLIncludes\SDL2-2.0.12\lib;$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\include;$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\lib;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\lib;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\include;$(ProjectDir)SDLIncludes\SDL2-2.0.12\include;$(ProjectDir)res;$(ProjectDir);$(ProjectDir)header;$(ProjectDir)src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\lib;$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\lib\x86;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\lib\x86;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\lib;$(ProjectDir);$(ProjectDir)res;$(ProjectDir)header;$(ProjectDir)src;$(ProjectDir)SDLIncludes\SDL2-2.0.12\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)SDLIncludes\SDL2-2.0.12\lib;$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\lib;$(ProjectDir)SDLIncludes\SDL2_image-2.0.5\lib\x86;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\lib\x86;$(ProjectDir)SDLIncludes\SDL2_ttf-2.0.15\lib;$(ProjectDir);$(ProjectDir)res;$(ProjectDir)header;$(ProjectDir)src;$(ProjectDir)SDLIncludes\SDL2-2.0.12\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

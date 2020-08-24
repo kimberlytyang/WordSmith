@@ -34,14 +34,19 @@ vector<char> ParseRandom::parse(int i) {
 		addWord = words.at(index);
 		for (unsigned k = 0; k < addWord.size(); ++k) {
 			prompt.push_back(addWord.at(k));
+			std::cout << "pushback" << addWord.at(k) << std::endl;
 		}
 		if (i > 0 && (i % 6 == 0)) {
 			prompt.push_back('/');
+			std::cout <<"pushback" << '/' << std::endl;
+			continue;
 		}
 		if (i < promptLength - 1) {
 			prompt.push_back(' ');
+			std::cout << "pushback" << ' ' << endl;
+			
 		}
 	}
-
+	
 	return prompt;
 }

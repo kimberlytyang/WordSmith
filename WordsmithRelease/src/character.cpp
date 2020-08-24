@@ -37,6 +37,9 @@ void Character::draw(SDL_Renderer* r) {
 	TTF_Font* font = TTF_OpenFont("res/courbd.ttf", 20);
 	SDL_Color color = { std::get<0>(this->getColor()),std::get<0>(this->getColor()),std::get<0>(this->getColor()) };
 	std::string temp(1, this->getC());
+	if (this->getC() == '/') {
+		temp = "_";
+	}
 	SDL_Surface* surface = TTF_RenderText_Solid(font, temp.c_str() , color);
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(r, surface);
 	int texW = 0;
