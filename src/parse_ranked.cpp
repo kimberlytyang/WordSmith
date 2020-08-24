@@ -4,7 +4,7 @@
 #include <fstream>
 #include <iostream>
 
-ParseNovice::ParseNovice() {
+ParseRanked::ParseRanked() {
 	ifstream inFS("res/user_cache.txt");
 	if (!inFS.is_open()) {
 		cout << "Error opening user cache file to extract." << endl;
@@ -19,7 +19,17 @@ ParseNovice::ParseNovice() {
 
 	inFS.close();
 
-	userRating = atoi(data);	
+	userRating = stoi(data);	
 }
 
-vector<char> ParseNovice::parse(int i) {}
+vector<char> ParseRanked::parse() {}
+
+double ParseRanked::calculateProbability(double userRating, double promptRating) {}
+
+void ParseRanked::calculateScore(int difficulty, int wpm, int accuracy) {}
+
+void ParseRanked::updateRating() {}
+
+double ParseRanked::getUserRating() { return userRating; }
+
+double ParseRanked::getPromptRating() { return promptRating; }
