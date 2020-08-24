@@ -17,11 +17,7 @@
  > * Languages / Tools / Libraries / Technologies:
  >   * [C++11](https://en.cppreference.com/w/cpp/11) - C++11 is the second major version of the C++ programming language.
  >   * [SDL](https://www.libsdl.org/) - Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to computer peripherals.
- > * Through the implementation of customizable typing exercises delivered through a user-friendly graphical interface, users can improve keyboard proficiency at their own pace. 
- > * For now, this project will apply the Composite, Flyweight, and Strategy design patterns. 
- >   * The Composite design will be reflected by a hierarchy of graphic objects which will be grouped and displayed on the GUI
- >   * The Flyweight design pattern will be used in order to print many characters onto the screen without having to create many objects at once. This will use a class with a hashmap which stores objects alreadt created.
- >   * The Strategy design pattern implements 3 different prompt selecting algorithms to be selected during runtime depending on the desired prompt difficulty.
+ > * Through the implementation of customizable typing exercises delivered through a user-friendly graphical interface, users can improve keyboard proficiency at their own pace.
  > * [Project Specifications](https://docs.google.com/document/d/1ejA8TL6ZKhy_L3s7JrmXWeAPj9ibm9LW2zqrtt7pb3Q/edit?usp=sharing)
 
  > ## Phase II
@@ -33,11 +29,11 @@
  > * Break down the first "Epic" into smaller user stories (issues) and assign them to the appropriate team member.
 ## Class Diagram
  > Include a class diagram and a description of the diagram. This should be in sufficient detail that another group could pick up the project this point and successfully complete it.
- > * Composite Design Pattern<br/>
+ > * Composite Design Pattern: The composite design pattern is reflected in a hierarchy of graphic objects which can be organized into composite class objects and displayed on the GUI.<br/>
  ![composite pattern diagram](res/composite.png)
- > * Strategy Design Pattern<br/>
+ > * Strategy Design Pattern: The strategy design pattern uses a prompt selector to choose between 4 different prompt parsing algorithms. This will allow the algorithm to be selected during runtime, depending on the desired prompt difficulty.<br/>
  ![strategy pattern diagram](res/strategy.png)
- > * Flyweight Design Pattern<br/>
+ > * Flyweight Design Pattern: The flyweight design pattern will be used during character object creation. It will use a hashmap to store character objects that have already been created so they can be reused when printing onto the screen, thus increasing efficiency and reducing memory usage.<br/>
  ![flyweight pattern diagram](res/flyweight.png)
  
  > ## Phase III
