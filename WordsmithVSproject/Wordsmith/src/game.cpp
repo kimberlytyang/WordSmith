@@ -155,8 +155,8 @@ void Game::handleEvents() {
 									
 									break;
 								} else if(vc.at(currChar) != *shiftKey && isupper(vc.at(currChar)) && strcmp(shiftKey, "Left Shift") != 0 && strcmp(shiftKey, "Right Shift") != 0){
-									std::cout << "159" << std::endl;
-									++mistakes;
+									//std::cout << "159" << std::endl;
+									//++mistakes;
 									break;
 								} else {
 									break;
@@ -237,17 +237,22 @@ void Game::handleEvents() {
 						drawString("PRESS q TO QUIT", 300, 50, 255, 255, 255, 20);
 						drawString("Past games", 202, 90, 255, 255, 255, 50);
 						Statistics* s = new Statistics();
+						std::cout << "Read stats" << std::endl;
 						s->readStats();
+						std::cout << "Add stats" << std::endl;
 						s->addStats(diff, WPM, Accuracy);
-						s->writeStats();
+						std::cout << "get stats" << std::endl;
 						vector<string> stats = s->getStatsFormatted();
+						std::cout << "write stats" << std::endl;
+						s->writeStats();
 						int xstat = 202;
 						int ystat = 160;
-						for (unsigned i = 0; i < 17; ++i) {
-							drawString(stats.at((stats.size()-1)-i), xstat, ystat, 255, 255, 255, 13);
+						std::cout << "writing" << std::endl;
+						for (int i = stats.size()-1; i >= 0 ; --i) {
+							std::cout << "i = " << i << std::endl;
+							drawString(stats.at(i), xstat, ystat, 255, 255, 255, 13);
 							ystat += 20;
 						}
-
 						while (true) {
 							SDL_Event restart;
 							SDL_PollEvent(&restart);
@@ -396,6 +401,7 @@ void Game::diffSelector() {
 }
 
 void Game::statsPage() {
+	std::cout << "399" << std::endl;
 	Window* w = new Window();
 	Rectangle* background = new Rectangle(0, 0, 800, 600, 0, 140, 0);
 	w->insert(background);
@@ -404,14 +410,18 @@ void Game::statsPage() {
 	w->draw(renderer);
 	this->drawString("GAME HISTORY", 5, 2, 255, 255, 255, 50);
 	this->drawString("Press q to quit", 550, 2, 255, 255, 255, 30);
+	this->drawString("Press c to clear", 550, 50, 255, 255, 255, 30);
 	Statistics* s = new Statistics();
 	s->readStats();
 	vector<string> v = s->getStatsFormatted();
-	s->writeStats();
+	//std::cout << "Writing stats" << std::endl;
+	//s->writeStats();
+	
+	std::cout << "411" << std::endl;
 	int x = 5;
 	int y = 70;
-	for (unsigned i = 0; i < 26; i++) {
-		this->drawString(v.at((v.size()-1) - i), x, y, 255, 255, 255, 20);
+	for (int i = v.size() - 1; i >= 0; --i) {
+		this->drawString(v.at(i), x, y, 255, 255, 255, 20);
 		x += 0;
 		y += 20;
 	}
@@ -422,6 +432,11 @@ void Game::statsPage() {
 			const char* quit = SDL_GetKeyName(q.key.keysym.sym);
 			if (strcmp(quit, "Q") == 0) {
 				break;
+			} else if (strcmp(quit, "C") == 0) {
+				s->clearStats();
+				s->readStats();
+				Rectangle* clear = new Rectangle(0, 75, 549, 600, 0, 140, 0);
+				clear->draw(renderer);
 			}
 		}
 	}

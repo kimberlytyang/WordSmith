@@ -42,13 +42,15 @@ void Statistics::writeStats() {
         }
 
 	unsigned i;
+	std::cout << "45" << std::endl;
 	for (i = 0; i < vars.size() - 1; ++i) {
 		tuple<int, int, int> hold = vars.at(i);
 		outFS << to_string(get<0>(hold)) << " " << to_string(get<1>(hold)) << " " << to_string(get<2>(hold)) << endl;
 	}
+	std::cout << "50" << std::endl;
 	tuple<int, int, int> hold = vars.at(i);
 	outFS << to_string(get<0>(hold)) << " " << to_string(get<1>(hold)) << " " << to_string(get<2>(hold)) << endl;
-
+	std::cout << "53" << std::endl;
 	outFS.close();
 }
 
