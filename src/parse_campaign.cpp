@@ -6,6 +6,8 @@
 #include <iostream>
 
 vector<char> ParseCampaign::parse(int i) {
+	vector<char> prompt;
+
 	ifstream inFile("res/user_cache.txt");
         if (!inFile.is_open()) {
                 cout << "Error opening user_cache.txt file to check progress." << endl;
@@ -17,9 +19,19 @@ vector<char> ParseCampaign::parse(int i) {
 	getline(inFile, campaign);
 	getline(inFile, rank);
 	inFile.close();
-	int campaignVal = stoi(campaign);
 
-	vector<char> prompt;
+	if (campaign == "") {
+		campaign = "1";
+		ofstream outBounds("res/user_cache.txt");
+                if (!outBounds.is_open()) {
+                        cout << "Error opening user_cache.txt to set empty campaign value." << endl;
+                        prompt.push_back('!');
+                        return prompt;
+                }
+                outBounds << campaign << endl << rank;
+                outBounds.close();
+	}
+	int campaignVal = stoi(campaign);
 
 	ifstream inCount("res/prompt.txt");
 	if (!inCount.is_open()) {
@@ -90,6 +102,10 @@ void ParseCampaign::incrementProgress() {
 	getline(inFS, campaign);
 	getline(inFS, rank);
 	inFS.close();
+
+	if (campaign == "") {
+                campaign = "0";
+        }
 
 	int campaignVal = stoi(campaign) + 1;
 	ofstream outFS("res/user_cache.txt");
