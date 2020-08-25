@@ -129,5 +129,24 @@ TEST(ParseRankedTest, ParseAdvancedRank) {
 	
 }
 
+TEST(ParseRankedTests, CalculateProbability) {
+	ParseRanked* test = new ParseRanked();
+	float output = test->calculateProbability(1.25, 1.50);
+	output = (int) (output * 100 + .5);
+	output = (float) output / 100;
+	EXPECT_EQ(output, 0.50);
+}
+
+TEST(ParseRankedTests, CalculateScore) {
+        ParseRanked* test = new ParseRanked();
+	test->calculateScore(65, 97);
+	float output = test->getUserScore();
+	output = (int) (output * 100 + .5);
+        output = (float) output / 100;
+	cout << output << endl;
+
+        EXPECT_FLOAT_EQ(output, 0.57);
+}
+
 
 #endif

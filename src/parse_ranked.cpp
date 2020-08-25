@@ -48,7 +48,7 @@ double ParseRanked::calculateProbability(double userRating, double promptRating)
 }
 
 void ParseRanked::calculateScore(int wpm, int accuracy) {
-	userScore = (wpm/70)*(.25) * (accuracy/100)*(.35);	
+	userScore = ((wpm/70.0)*(.25)) + ((accuracy/100.0)*(.35));	
 }
 
 void ParseRanked::updateRating() {}
