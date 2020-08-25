@@ -22,7 +22,7 @@ TEST(ParseRankedTest, ParseNoviceRank) {
         if (!outFS.is_open()) {
                 cout << "Error opening stats.txt to test." << endl;
         }
-	outFS << endl << "1.00";
+	outFS << endl << ".45";
 	outFS.close();	
 
 	ParseRanked* test = new ParseRanked();
@@ -59,7 +59,7 @@ TEST(ParseRankedTest, ParseIntermediateRank) {
         if (!outFS.is_open()) {
                 cout << "Error opening stats.txt to test." << endl;
         }
-        outFS << endl << "2.00";
+        outFS << endl << "1.45";
 	outFS.close();
 
         ParseRanked* test = new ParseRanked();
@@ -96,7 +96,7 @@ TEST(ParseRankedTest, ParseAdvancedRank) {
         if (!outFS.is_open()) {
                 cout << "Error opening stats.txt to test." << endl;
         }
-        outFS << endl << "3.00";
+        outFS << endl << "2.45";
 	outFS.close();
 
         ParseRanked* test = new ParseRanked();
@@ -143,10 +143,13 @@ TEST(ParseRankedTests, CalculateScore) {
 	float output = test->getUserScore();
 	output = (int) (output * 100 + .5);
         output = (float) output / 100;
-	cout << output << endl;
 
         EXPECT_FLOAT_EQ(output, 0.57);
 }
 
+TEST(ParseRankedTests, PromptRating) {
+	
+	EXPECT_EQ(0, 0);
+}
 
 #endif
