@@ -13,8 +13,8 @@ class ParseRanked : public Parse {
 		double userRating, promptRating;
 		vector<char> prompt;
 		double userScore;
-		double getPromptRating(vector<char> prompt);
-		int getWordCount(vector<char> prompt);
+		void calculatePromptRating(vector<char> v);
+		int getWordCount(vector<char> v);
 	public:
 		ParseRanked(); //reads and sets userRating
 		vector<char> parse(int i); //finds appropriate difficulty
