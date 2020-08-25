@@ -25,6 +25,7 @@
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\line.cpp" />
     <ClCompile Include="src\parse_advanced.cpp" />
+    <ClCompile Include="src\parse_campaign.cpp" />
     <ClCompile Include="src\parse_intermediate.cpp" />
     <ClCompile Include="src\parse_novice.cpp" />
     <ClCompile Include="src\parse_random.cpp" />
@@ -41,6 +42,7 @@
     <ClInclude Include="header\line.hpp" />
     <ClInclude Include="header\parse.hpp" />
     <ClInclude Include="header\parse_advanced.hpp" />
+    <ClInclude Include="header\parse_campaign.hpp" />
     <ClInclude Include="header\parse_intermediate.hpp" />
     <ClInclude Include="header\parse_novice.hpp" />
     <ClInclude Include="header\parse_random.hpp" />
@@ -53,6 +55,7 @@
     <Text Include="res\prompt.txt" />
     <Text Include="res\random.txt" />
     <Text Include="res\stats.txt" />
+    <Text Include="res\user_cache.txt" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="res\comic.ttf" />

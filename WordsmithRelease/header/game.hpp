@@ -6,6 +6,7 @@
 #include "header/parse_intermediate.hpp"
 #include "header/parse_advanced.hpp"
 #include "header/parse_random.hpp"
+#include "header/parse_campaign.hpp"
 #include "header/parse.hpp"
 #include "header/character.hpp"
 #include "header/flyweight.hpp"

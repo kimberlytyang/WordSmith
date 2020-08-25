@@ -61,7 +61,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 		gameWindow->draw(renderer);
 
-		std::vector<std::string>d{ "(Novice)", "(Intermediate)", "(Advanced)", "(Scrambled)" };
+		std::vector<std::string>d{ "(Novice)", "(Intermediate)", "(Advanced)", "(Scrambled)", "(Campaign)" };
 
 		this->drawString(d.at(diff), 0, 50, 255, 255, 255, 20);
 
@@ -253,6 +253,12 @@ void Game::handleEvents() {
 							drawString(stats.at(i), xstat, ystat, 255, 255, 255, 13);
 							ystat += 20;
 						}
+
+						if (diff == 4) {
+							ParseCampaign* p = new ParseCampaign();
+							p->incrementProgress();
+						}
+
 						while (true) {
 							SDL_Event restart;
 							SDL_PollEvent(&restart);
@@ -339,23 +345,26 @@ void Game::diffSelector() {
 	while (true) {
 		Rectangle* background = new Rectangle(0, 0, 800, 600, 0, 130, 0);
 		background->draw(renderer);
-		this->drawString("Select game mode with the arrow keys", 5, 0, 255, 255, 255, 20);
+		this->drawString("Select game mode with the number keys", 5, 0, 255, 255, 255, 20);
 		this->drawString("Enter to confirm", 5, 30, 255, 255, 255, 20);
 		this->drawString("s to view game history", 5, 60, 255, 255, 255, 20);
 		this->drawString("q to quit", 5, 90, 255, 255, 255, 20);
-		this->drawString("Novice", 366, 200, 255, 255, 255, 20);
-		this->drawString("Intermediate", 166, 300, 255, 255, 255, 20);
-		this->drawString("Advanced", 532, 300, 255, 255, 255, 20);
-		this->drawString("Scrambled", 356, 400, 255, 255, 255, 20);
+		this->drawString("1) Novice", 5, 150, 255, 255, 255, 30);
+		this->drawString("2) Intermediate", 5, 200, 255, 255, 255, 30);
+		this->drawString("3) Advanced", 5, 250, 255, 255, 255, 30);
+		this->drawString("4) Scrambled", 5, 300, 255, 255, 255, 30);
+		this->drawString("5) Campaign", 5, 350, 255, 255, 255, 30);
 		Window* w = new Window();
-		Line* n = new Line(366, 230, 430, 230, 0, 0, 0);
+		Line* n = new Line(38, 190, 137, 190, 0, 0, 0);
 		w->insert(n);
-		Line* i = new Line(166, 330, 286, 330, 255, 255, 255);
+		Line* i = new Line(40, 240, 230, 240, 255, 255, 255);
 		w->insert(i);
-		Line* a = new Line(532, 330, 622, 330, 255, 255, 255);
+		Line* a = new Line(40, 290, 180, 290, 255, 255, 255);
 		w->insert(a);
-		Line* s = new Line(356, 430, 459, 430, 255, 255, 255);
+		Line* s = new Line(40, 340, 190, 340, 255, 255, 255);
 		w->insert(s);
+		Line* c = new Line(40, 392, 172, 392, 255, 255, 255);
+		w->insert(c);
 		this->drawImage("res/start.jpg", 600, 0, 200, 200);
 		bool notChose = false;
 		int choice = 0;
@@ -366,21 +375,25 @@ void Game::diffSelector() {
 
 			if (arrow.type == SDL_KEYDOWN) {
 				const char* ak = SDL_GetKeyName(arrow.key.keysym.sym);
-				if (strcmp(ak, "Up") == 0) {
+				if (strcmp(ak, "1") == 0) {
 					w->getChild(choice)->setColor(255, 255, 255);
 					choice = 0;
 					w->getChild(choice)->setColor(0, 0, 0);
-				} else if (strcmp(ak, "Left") == 0) {
+				} else if (strcmp(ak, "2") == 0) {
 					w->getChild(choice)->setColor(255, 255, 255);
 					choice = 1;
 					w->getChild(choice)->setColor(0, 0, 0);
-				} else if (strcmp(ak, "Right") == 0) {
+				} else if (strcmp(ak, "3") == 0) {
 					w->getChild(choice)->setColor(255, 255, 255);
 					choice = 2;
 					w->getChild(choice)->setColor(0, 0, 0);
-				} else if (strcmp(ak, "Down") == 0) {
+				} else if (strcmp(ak, "4") == 0) {
 					w->getChild(choice)->setColor(255, 255, 255);
 					choice = 3;
+					w->getChild(choice)->setColor(0, 0, 0);
+				} else if(strcmp(ak, "5") == 0){
+					w->getChild(choice)->setColor(255, 255, 255);
+					choice = 4;
 					w->getChild(choice)->setColor(0, 0, 0);
 				} else if (strcmp(ak, "Return") == 0) {
 					diff = choice;
@@ -491,6 +504,8 @@ Parse* Game::getDiffG(int i) {
 	}
 	else if(i == 3) {
 		return new ParseRandom();
+	} else if(i == 4) {
+		return new ParseCampaign();
 	} else {
 		return nullptr;
 	}

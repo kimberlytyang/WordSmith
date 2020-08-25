@@ -82,8 +82,10 @@ vector<string> Statistics::getStatsFormatted() {
 			diff = "Advanced";
 		} else if(get<0>(vars.at(i)) == 3){
 			diff = "Scrambled";
+		} else if(get<0>(vars.at(i)) == 4){
+			diff = "Campaign";
 		} else {
-			diff = "Unknown";
+			diff = "unknown";
 		}
 
 		entry = "Difficulty: " + diff + " -- WPM: " + to_string(get<1>(vars.at(i))) + " -- Accuracy: " + to_string(get<2>(vars.at(i))) + "%";
