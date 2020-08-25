@@ -22,7 +22,7 @@ ParseRanked::ParseRanked() {
 	userRating = stoi(data);	
 }
 
-vector<char> ParseRanked::parse() {}
+vector<char> ParseRanked::parse(int i) {}
 
 double ParseRanked::calculateProbability(double userRating, double promptRating) {}
 
