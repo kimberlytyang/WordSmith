@@ -42,7 +42,6 @@ vector<char> ParseRanked::parse(int i) {
 		ParseAdvanced* diff = new ParseAdvanced();
 		prompt = diff->parse(i);
 	}
-	calculatePromptRating(prompt);
 	return prompt;	
 }
 
@@ -55,6 +54,7 @@ void ParseRanked::calculateScore(int wpm, int accuracy) {
 }
 
 void ParseRanked::updateRating() {
+	calculatePromptRating(prompt);
 	userRating = userRating + (userScore - calculateProbability(userRating, promptRating));
 
 	ifstream inFS("res/user_cache.txt");

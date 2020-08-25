@@ -143,13 +143,22 @@ TEST(ParseRankedTests, CalculateScore) {
 	float output = test->getUserScore();
 	output = (int) (output * 100 + .5);
         output = (float) output / 100;
-
         EXPECT_FLOAT_EQ(output, 0.57);
 }
 
 TEST(ParseRankedTests, PromptRating) {
+	ofstream outFS("res/user_cache.txt");
+        if (!outFS.is_open()) {
+                cout << "Error opening stats.txt to test." << endl;
+        }
+
+        outFS << endl << "2.45";
+        outFS.close();
 	
-	EXPECT_EQ(0, 0);
+	ParseRanked* test = new ParseRanked();
+        vector<char> prompt = test->parse(4);
+	test->calculatePromptRating(prompt);
+	EXPECT_FLOAT_EQ(test->getPromptRating(), 2.45 * (40.0/46.0));
 }
 
 #endif
