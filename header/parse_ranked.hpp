@@ -17,7 +17,7 @@ class ParseRanked : public Parse {
 		ParseRanked(); //reads and sets userRating
 		vector<char> parse(int i); //finds appropriate difficulty
 		double calculateProbability(double userRating, double promptRating); // callculate chance of success (0 to 1)
-		void calculateScore(int difficulty, int wpm, int accuracy);
+		void calculateScore(int wpm, int accuracy);
 		void updateRating();
 		double getUserRating();
 		double getPromptRating();

@@ -1,4 +1,8 @@
 #include "../header/parse_ranked.hpp"
+#include "../header/parse_novice.hpp"
+#include "../header/parse_intermediate.hpp"
+#include "../header/parse_advanced.hpp"
+
 
 #include <string>
 #include <fstream>
@@ -18,15 +22,30 @@ ParseRanked::ParseRanked() {
 	}
 
 	inFS.close();
+	
+	if (data == "") {
+		data == "1.00";
+	}
 
-	userRating = stoi(data);	
+	userRating = stod(data);	
 }
 
-vector<char> ParseRanked::parse(int i) {}
+vector<char> ParseRanked::parse(int i) {
+	if (userRating < 1.50) {
+		ParseNovice* diff = new ParseNovice();
+		return diff->parse(i);
+	} else if (userRating < 2.50) {
+		ParseIntermediate* diff = new ParseIntermediate();
+		return diff->parse(i);
+	} else {
+		ParseAdvanced* diff = new ParseAdvanced();
+		return diff->parse(i);
+	}		
+}
 
 double ParseRanked::calculateProbability(double userRating, double promptRating) {}
 
-void ParseRanked::calculateScore(int difficulty, int wpm, int accuracy) {}
+void ParseRanked::calculateScore(int wpm, int accuracy) {}
 
 void ParseRanked::updateRating() {}
 
