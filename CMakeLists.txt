@@ -16,6 +16,7 @@ ADD_EXECUTABLE(test
 	src/parse_intermediate.cpp
 	src/parse_advanced.cpp
 	src/parse_random.cpp
+	src/parse_campaign.cpp
 	src/statistics.cpp
 )
 

@@ -8,6 +8,7 @@
 #include "parse_intermediate_test.hpp"
 #include "parse_advanced_test.hpp"
 #include "parse_random_test.hpp"
+#include "parse_campaign_test.hpp"
 #include "prompt_selector_test.hpp"
 #include "statistics_test.hpp"
 
