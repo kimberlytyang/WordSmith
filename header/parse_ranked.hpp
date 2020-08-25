@@ -21,6 +21,7 @@ class ParseRanked : public Parse {
 		void updateRating();
 		double getUserRating();
 		double getPromptRating();
+		double getUserScore();
 };
 
 #endif

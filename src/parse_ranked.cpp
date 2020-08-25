@@ -3,10 +3,10 @@
 #include "../header/parse_intermediate.hpp"
 #include "../header/parse_advanced.hpp"
 
-
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <cmath>
 
 ParseRanked::ParseRanked() {
 	ifstream inFS("res/user_cache.txt");
@@ -43,12 +43,18 @@ vector<char> ParseRanked::parse(int i) {
 	}		
 }
 
-double ParseRanked::calculateProbability(double userRating, double promptRating) {}
+double ParseRanked::calculateProbability(double userRating, double promptRating) {
+	return 1.0 / (1.0 + pow(10, (userRating - promptRating) / 400));
+}
 
-void ParseRanked::calculateScore(int wpm, int accuracy) {}
+void ParseRanked::calculateScore(int wpm, int accuracy) {
+	userScore = (wpm/70)*(.25) * (accuracy/100)*(.35);	
+}
 
 void ParseRanked::updateRating() {}
 
 double ParseRanked::getUserRating() { return userRating; }
 
 double ParseRanked::getPromptRating() { return promptRating; }
+
+double ParseRanked::getUserScore() { return userScore; }
