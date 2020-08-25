@@ -4,8 +4,9 @@
 #include "../header/parse_ranked.hpp"
 #include <iostream>
 
-TEST(ParseRankedTest, Constructor) {
-	EXPECT_EQ(0,0);
+TEST(ParseRankedTest, DefaultConstructor) {
+	ParseRanked* test = new ParseRanked();
+	EXPECT_EQ(test->getUserRating(), 1.0);
 }
 
 #endif
