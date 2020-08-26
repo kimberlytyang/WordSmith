@@ -38,13 +38,12 @@
   > * Post-Game Screen<br/>
  ![post_game_screen](res/past.png)
  
- ## Installation/Usage
- > *For release version(No Visual Studio)*
+ ## Release Verison Installation(No Visual Studio)
  > * Clone the repository on a local machine using Git Bash
  > * Checkout into the GUI branch
  > * Open the folder titled "WordsmithRelease"
  > * Run Wordsmith.exe
- > *For non-release version(Visual Studio Required)*
+ ## Non-Release Version Installation(Visual Studio Required)
  > * Clone the repository on a local machine using Git Bash
  > * Checkout into the GUI branch
  > * Open the folder titled "WordsmithVSproject"
