@@ -26,9 +26,13 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 			std::cout << "DID NOT INIT TTF" << std::endl;
 		}
 
+		std::cout << "Drawing main menu" << std::endl;
+
 		gameName = title;
 
 		this->diffSelector();
+
+		std::cout << "Initializing game..." << std::endl;
 
 		Rectangle* background = new Rectangle(0, 0, 800, 600, 0, 130, 0);
 		gameWindow->insert(background);
@@ -61,10 +65,11 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 		gameWindow->draw(renderer);
 
-		std::vector<std::string>d{ "(Novice)", "(Intermediate)", "(Advanced)", "(Scrambled)", "(Campaign)" };
-
+		std::vector<std::string>d{ "(Novice)", "(Intermediate)", "(Advanced)", "(Scrambled)", "(Campaign)", "(Ranked)" };
+		std::cout << "Gamemode: " << d.at(diff) << std::endl;
 		this->drawString(d.at(diff), 0, 50, 255, 255, 255, 20);
 
+		std::cout << "Prompt selected: ";
 		Flyweight* fw = new Flyweight();
 
 		int len = 0;
@@ -134,7 +139,7 @@ void Game::handleEvents() {
 					//std::cout << currtime / CLOCKS_PER_SEC << std::endl;
 					if (ptime < currtime / CLOCKS_PER_SEC) {
 						this->updateTimer(renderer, currtime / CLOCKS_PER_SEC);
-						std::cout << "UPDATING TIME" << std::endl;
+						std::cout << "UPDATING..." << std::endl;
 					}
 					SDL_Event event1;
 					SDL_PollEvent(&event1);
@@ -237,26 +242,36 @@ void Game::handleEvents() {
 						drawString("PRESS q TO QUIT", 300, 50, 255, 255, 255, 20);
 						drawString("Past games", 202, 90, 255, 255, 255, 50);
 						Statistics* s = new Statistics();
-						std::cout << "Read stats" << std::endl;
+						std::cout << "Updating stats" << std::endl;
 						s->readStats();
-						std::cout << "Add stats" << std::endl;
+						//std::cout << "Add stats" << std::endl;
 						s->addStats(diff, WPM, Accuracy);
-						std::cout << "get stats" << std::endl;
+						//std::cout << "get stats" << std::endl;
 						vector<string> stats = s->getStatsFormatted();
-						std::cout << "write stats" << std::endl;
+						//std::cout << "write stats" << std::endl;
 						s->writeStats();
 						int xstat = 202;
 						int ystat = 160;
 						std::cout << "writing" << std::endl;
+						int count = 0;
 						for (int i = stats.size()-1; i >= 0 ; --i) {
-							std::cout << "i = " << i << std::endl;
+							if (count == 15) {
+								break;
+							}
 							drawString(stats.at(i), xstat, ystat, 255, 255, 255, 13);
 							ystat += 20;
+							++count;
 						}
 
 						if (diff == 4) {
 							ParseCampaign* p = new ParseCampaign();
 							p->incrementProgress();
+						}
+						else if (diff == 5) {
+							ParseRanked* pr = new ParseRanked();
+							pr->calculateScore(WPM, Accuracy);
+							pr->updateRating();
+							std::cout << "New Rating: " << pr->getUserRating() << std::endl;
 						}
 
 						while (true) {
@@ -265,14 +280,14 @@ void Game::handleEvents() {
 							tick++;
 							this->cycleImage("slow");
 							if (restart.type == SDL_KEYDOWN) {
-								std::cout << "226" << std::endl;
+								//std::cout << "226" << std::endl;
 								const char* kp = SDL_GetKeyName(restart.key.keysym.sym);	
 								if (strcmp(kp, "Return") == 0) {
-									std::cout << "230" << std::endl;
+									//std::cout << "230" << std::endl;
 									break;
 								}
 								else if (strcmp(kp, "Q") == 0) {
-									std::cout << "234" << std::endl;
+									//std::cout << "234" << std::endl;
 									isRunning = false;
 									return;
 								}
@@ -318,7 +333,7 @@ void Game::updateTimer(SDL_Renderer* r, int t) {
 
 
 	int wpm = (currChar / 5.5) / (ptime/60.0);
-	std::cout << wpm << std::endl;
+	std::cout << "WPM:" << wpm << std::endl;
 	WPM = wpm;
 	string wpmString = to_string(wpm) + " WPM";
 	if (t == 0) {
@@ -329,7 +344,7 @@ void Game::updateTimer(SDL_Renderer* r, int t) {
 
 	y += 50;
 
-	std::cout << "MISTAKES: " << mistakes << std::endl << "currChar: " << currChar << std::endl;
+	std::cout << "MISTAKES: " << mistakes << std::endl;
 	int accuracy = ((currChar*1.0) /( (mistakes*1.0) + (currChar*1.0))) * 100.0;
 	Accuracy = accuracy;
 	std::cout << "ACCURACY: " << accuracy << std::endl;
@@ -354,6 +369,7 @@ void Game::diffSelector() {
 		this->drawString("3) Advanced", 5, 250, 255, 255, 255, 30);
 		this->drawString("4) Scrambled", 5, 300, 255, 255, 255, 30);
 		this->drawString("5) Campaign", 5, 350, 255, 255, 255, 30);
+		this->drawString("6) Ranked", 5, 400, 255, 255, 255, 30);
 		Window* w = new Window();
 		Line* n = new Line(38, 190, 137, 190, 0, 0, 0);
 		w->insert(n);
@@ -365,6 +381,8 @@ void Game::diffSelector() {
 		w->insert(s);
 		Line* c = new Line(40, 392, 172, 392, 255, 255, 255);
 		w->insert(c);
+		Line* r = new Line(40, 440, 150, 440, 255, 255, 255);
+		w->insert(r);
 		this->drawImage("res/start.jpg", 600, 0, 200, 200);
 		bool notChose = false;
 		int choice = 0;
@@ -379,30 +397,41 @@ void Game::diffSelector() {
 					w->getChild(choice)->setColor(255, 255, 255);
 					choice = 0;
 					w->getChild(choice)->setColor(0, 0, 0);
-				} else if (strcmp(ak, "2") == 0) {
+				}
+				else if (strcmp(ak, "2") == 0) {
 					w->getChild(choice)->setColor(255, 255, 255);
 					choice = 1;
 					w->getChild(choice)->setColor(0, 0, 0);
-				} else if (strcmp(ak, "3") == 0) {
+				}
+				else if (strcmp(ak, "3") == 0) {
 					w->getChild(choice)->setColor(255, 255, 255);
 					choice = 2;
 					w->getChild(choice)->setColor(0, 0, 0);
-				} else if (strcmp(ak, "4") == 0) {
+				}
+				else if (strcmp(ak, "4") == 0) {
 					w->getChild(choice)->setColor(255, 255, 255);
 					choice = 3;
 					w->getChild(choice)->setColor(0, 0, 0);
-				} else if(strcmp(ak, "5") == 0){
+				}
+				else if (strcmp(ak, "5") == 0) {
 					w->getChild(choice)->setColor(255, 255, 255);
 					choice = 4;
 					w->getChild(choice)->setColor(0, 0, 0);
-				} else if (strcmp(ak, "Return") == 0) {
+				}
+				else if (strcmp(ak,"6") == 0){
+					w->getChild(choice)->setColor(255, 255, 255);
+					choice = 5;
+					w->getChild(choice)->setColor(0, 0, 0);
+				} 
+				else if (strcmp(ak, "Return") == 0) {
 					diff = choice;
-					std::cout << "CHOICE" << std::endl;
+					//std::cout << "CHOICE" << std::endl;
 					return;
 				} else if (strcmp(ak, "Q") == 0) {
 					this->clean();
 					exit(0);
 				} else if (strcmp(ak, "S") == 0) {
+					std::cout << "Opening statistics page" << std::endl;
 					this->statsPage();
 					break;
 				}
@@ -414,7 +443,7 @@ void Game::diffSelector() {
 }
 
 void Game::statsPage() {
-	std::cout << "399" << std::endl;
+	//std::cout << "399" << std::endl;
 	Window* w = new Window();
 	Rectangle* background = new Rectangle(0, 0, 800, 600, 0, 140, 0);
 	w->insert(background);
@@ -430,13 +459,18 @@ void Game::statsPage() {
 	//std::cout << "Writing stats" << std::endl;
 	//s->writeStats();
 	
-	std::cout << "411" << std::endl;
+	//std::cout << "411" << std::endl;
 	int x = 5;
 	int y = 70;
+	int cap = 0;
 	for (int i = v.size() - 1; i >= 0; --i) {
+		if (cap == 20) {
+			break;
+		}
 		this->drawString(v.at(i), x, y, 255, 255, 255, 20);
 		x += 0;
 		y += 20;
+		++cap;
 	}
 	while (true) {
 		SDL_Event q;
@@ -446,6 +480,7 @@ void Game::statsPage() {
 			if (strcmp(quit, "Q") == 0) {
 				break;
 			} else if (strcmp(quit, "C") == 0) {
+				std::cout << "Clearing stats!" << std::endl;
 				s->clearStats();
 				s->readStats();
 				Rectangle* clear = new Rectangle(0, 75, 549, 600, 0, 140, 0);
@@ -502,11 +537,16 @@ Parse* Game::getDiffG(int i) {
 	else if (i == 2) {
 		return new ParseAdvanced();
 	}
-	else if(i == 3) {
+	else if (i == 3) {
 		return new ParseRandom();
-	} else if(i == 4) {
+	}
+	else if (i == 4) {
 		return new ParseCampaign();
-	} else {
+	}
+	else if(i == 5) {
+		return new ParseRanked();
+	}
+	else {
 		return nullptr;
 	}
 }

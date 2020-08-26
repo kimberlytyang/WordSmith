@@ -30,7 +30,7 @@ Character::Character(char c, int x, int y, int r, int g, int b) {
 }
 
 void Character::draw(SDL_Renderer* r) {
-	std::cout << "drawing " << this->getC();
+	//std::cout << "drawing " << this->getC();
 	if (this->getC() == ' ') {
 		this->setC('_');
 	}

@@ -29,6 +29,7 @@
     <ClCompile Include="src\parse_intermediate.cpp" />
     <ClCompile Include="src\parse_novice.cpp" />
     <ClCompile Include="src\parse_random.cpp" />
+    <ClCompile Include="src\parse_ranked.cpp" />
     <ClCompile Include="src\prompt_selector.cpp" />
     <ClCompile Include="src\rectangle.cpp" />
     <ClCompile Include="src\statistics.cpp" />
@@ -46,6 +47,7 @@
     <ClInclude Include="header\parse_intermediate.hpp" />
     <ClInclude Include="header\parse_novice.hpp" />
     <ClInclude Include="header\parse_random.hpp" />
+    <ClInclude Include="header\parse_ranked.hpp" />
     <ClInclude Include="header\prompt_selector.hpp" />
     <ClInclude Include="header\rectangle.hpp" />
     <ClInclude Include="header\statistics.hpp" />

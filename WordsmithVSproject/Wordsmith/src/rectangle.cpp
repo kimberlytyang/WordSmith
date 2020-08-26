@@ -32,7 +32,7 @@ void Rectangle::draw(SDL_Renderer* r) {
 	temp.y = this->getTL().second;
 	temp.w = (this->getBR().first - this->getTL().first);
 	temp.h = (this->getBR().second - this->getTL().second);
-	std::cout << temp.x << " " << temp.y << " " << temp.w <<" " <<  temp.h << std::endl;
+	//std::cout << temp.x << " " << temp.y << " " << temp.w <<" " <<  temp.h << std::endl;
 	
 	SDL_SetRenderDrawColor(r, std::get<0>(this->getColor()), std::get<1>(this->getColor()), std::get<2>(this->getColor()), 255);
 	SDL_RenderFillRect(r, &temp);
