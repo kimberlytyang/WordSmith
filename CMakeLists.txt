@@ -18,6 +18,7 @@ ADD_EXECUTABLE(test
 	src/parse_random.cpp
 	src/parse_campaign.cpp
 	src/statistics.cpp
+	src/parse_ranked.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
