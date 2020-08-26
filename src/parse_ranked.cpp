@@ -55,7 +55,10 @@ void ParseRanked::calculateScore(int wpm, int accuracy) {
 
 void ParseRanked::updateRating() {
 	calculatePromptRating(prompt);
-	userRating = userRating + (userScore - calculateProbability(userRating, promptRating));
+	double newRating = userRating + (userScore - calculateProbability(userRating, promptRating));
+	newRating = (int) (newRating * 100 + .5);
+        newRating = (float) newRating / 100;
+	userRating = newRating;
 
 	ifstream inFS("res/user_cache.txt");
 	if (!inFS.is_open()) {
@@ -75,7 +78,11 @@ void ParseRanked::updateRating() {
 		cout << "Error opening user_cache.txt file to update campaign." << endl;
                 return;
 	}
-	outFS << campaign << endl << to_string(userRating);
+	
+	string userRatingString = to_string(userRating);
+	userRatingString.erase(userRatingString.find_last_not_of('0') + 1, string::npos);
+	
+	outFS << campaign << endl << userRatingString;
 	outFS.close();
 }
 
