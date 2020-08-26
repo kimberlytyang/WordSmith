@@ -19,8 +19,27 @@
  ![flyweight pattern diagram](res/flyweight.png)
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ > * Main Menu<br/>
+ ![main_menu](res/menu.png)
+  > * Game History<br/>
+ ![game_history](res/history.png)
+  > * Novice Mode<br/>
+ ![novice_mode](res/novice.png)
+  > * Intermediate Mode<br/>
+ ![intermediate_mode](res/intermediate.png)
+  > * Advanced Mode<br/>
+ ![advanced_mode](res/advanced.png)
+  > * Scrambled Mode<br/>
+ ![scrambled_mode](res/scrambled.png)
+  > * Campaign Mode<br/>
+ ![campaign_mode](res/campaign.png)
+  > * Ranked Mode<br/>
+ ![ranked_mode](res/ranked.png)
+  > * Post-Game Screen<br/>
+ ![post_game_screen](res/past.png)
+ 
  ## Installation/Usage
  > Instructions on installing and running your application
+ 
  ## Testing
  > * Continuous Integration: Testing was automated on pull requests to the master branch using GitHub Actions.
