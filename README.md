@@ -39,7 +39,19 @@
  ![post_game_screen](res/past.png)
  
  ## Installation/Usage
- > Instructions on installing and running your application
+ > *For release version(No Visual Studio)*
+ > * Clone the repository on a local machine using Git Bash
+ > * Checkout into the GUI branch
+ > * Open the folder titled "WordsmithRelease"
+ > * Run Wordsmith.exe
+ > *For non-release version(Visual Studio Required)*
+ > * Clone the repository on a local machine using Git Bash
+ > * Checkout into the GUI branch
+ > * Open the folder titled "WordsmithVSproject"
+ > * Open Wordsmith.sln
+ > * Make sure the top drop-down menus say "debug" and "x86"
+ > * Ctrl + B to build the project
+ > * Press the play bar at the top
  
  ## Testing
  > * Continuous Integration: Testing was automated on pull requests to the master branch using GitHub Actions.
