@@ -6,7 +6,13 @@
  > * Typing proficiency is essential in today's academic and professional environment. One must develop this practical skill in order to improve performance in the workplace and save time when typing.
  > * Languages / Tools / Libraries / Technologies:
  >   * [C++11](https://en.cppreference.com/w/cpp/11) - C++11 is the second major version of the C++ programming language.
+ >   * [Microsoft Visual Studio](https://visualstudio.microsoft.com/) - Microsoft Visual Studio is an integrated development environment that is used to develop computer programs, as well as websites, web apps, web services and mobile apps.
+ >   * [Git Bash](https://gitforwindows.org/) - Git for Windows provides a BASH emulation used to run Git from the command line.
  >   * [SDL](https://www.libsdl.org/) - Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to computer peripherals.
+ >   * [SDL_ttf](https://www.libsdl.org/projects/SDL_ttf/) - SDL_ttf is a library which allows you to use TrueType fonts in your SDL applications.
+ >   * [SDL_image](https://www.libsdl.org/projects/SDL_image/) - SDL_image is an image file loading library that loads images as SDL surfaces and textures.
+ >   * [TypeRacer Data](http://typeracerdata.com/texts) - Prompts were pulled from TypeRacer Data based on difficulty rating value.
+ >   * [Common Words](https://englishyourway.com.br/vocabulary-the-300-most-commonly-used-english-words/) - This site was used to create a pool of common words that the Random Mode pulled from.
  > * Through the implementation of customizable typing exercises delivered through a user-friendly graphical interface, users can improve keyboard proficiency at their own pace.
  > * [Project Specifications](https://docs.google.com/document/d/1ejA8TL6ZKhy_L3s7JrmXWeAPj9ibm9LW2zqrtt7pb3Q/edit?usp=sharing)
 
@@ -38,17 +44,18 @@
   > * Post-Game Screen<br/>
  ![post_game_screen](res/past.png)
  
- ## Release Verison Installation(No Visual Studio)
+ ## Release Verison Installation (No Visual Studio)
  > * Clone the repository on a local machine using Git Bash
  > * Checkout into the GUI branch
  > * Open the folder titled "WordsmithRelease"
  > * Run Wordsmith.exe
- ## Non-Release Version Installation(Visual Studio Required)
+ 
+ ## Non-Release Version Installation (Visual Studio Required)
  > * Clone the repository on a local machine using Git Bash
  > * Checkout into the GUI branch
  > * Open the folder titled "WordsmithVSproject"
  > * Open Wordsmith.sln
- > * Make sure the top drop-down menus say "debug" and "x86"
+ > * Make sure the top drop-down menus on the top say "debug" and "x86"
  > * Ctrl + B to build the project
  > * Press the play bar at the top
  
