@@ -69,7 +69,8 @@
  >   * Apply sort functionality for stats within in GUI
  > * Chris & Kimberly:
  >   * Implement an `average()` function for `Statistics` class
- >   * Implement an Image class as part of Composite Design
+ >   * Implement an `Image` class as part of Composite Design
+ >   * Implement an `GIF` class as part of Composite Design
  >   * Create Developer Tools for convenient GUI customization and preset
  >      * Create an executable for developer settings
  >      * `developer.cpp` should create an interactable menu
