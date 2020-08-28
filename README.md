@@ -66,7 +66,7 @@
  > * Albert:
  >   * Add support for detection/display of complex characters
  >   * Display rating in GUI
- >   * Apply sort functionalit for stats within in GUI
+ >   * Apply sort functionality for stats within in GUI
  > * Chris & Kimberly:
  >   * Implement an `average()` function for `Statistics` class
  >   * Implement an Image class as part of Composite Design
