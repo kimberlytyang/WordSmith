@@ -61,19 +61,3 @@
  
  ## Testing
  > * Continuous Integration: Testing was automated on pull requests to the master branch using GitHub Actions.
- 
- ## 3rd Sprint
- > * Albert:
- >   * Add support for detection/display of complex characters
- >   * Display rating in GUI
- >   * Apply sort functionality for stats within in GUI
- > * Chris & Kimberly:
- >   * Implement an `average()` function for `Statistics` class
- >   * Implement an `Image` class as part of the Composite Design
- >   * Implement a `GIF` class as part of the Composite Design
- >   * Create Developer Tools for convenient GUI customization and preset
- >      * Create an executable for developer settings
- >      * `developer.cpp` should create an interactable menu
- >      * Create functions that selects from a `config.txt` file that stores code snippets for direct usage
- >      * Create functions that the GUI can use to read the settings and use them
- 
